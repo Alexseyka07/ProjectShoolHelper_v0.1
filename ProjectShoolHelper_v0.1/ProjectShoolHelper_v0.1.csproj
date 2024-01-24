@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net7.0</TargetFramework>
+    <RootNamespace>ProjectShoolHelper_v0._1</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\NeuralNetworkProject\NeuralNetworkProject.csproj" />
+    <ProjectReference Include="..\SetNeuaralNetworkData\SetNeuaralNetworkData.csproj" />
+    <ProjectReference Include="..\Settings\Settings.csproj" />
+    <ProjectReference Include="..\Theory\Repository.csproj" />
+  </ItemGroup>
+
+</Project>

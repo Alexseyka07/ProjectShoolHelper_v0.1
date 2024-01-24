@@ -1,0 +1,12 @@
+E:\Yandex Disk\YandexDisk\prodaction\GitHub\ProjectShoolHelper_v0.1\Theory\obj\Debug\net7.0\Repository.csproj.AssemblyReference.cache
+E:\Yandex Disk\YandexDisk\prodaction\GitHub\ProjectShoolHelper_v0.1\Theory\obj\Debug\net7.0\Repository.GeneratedMSBuildEditorConfig.editorconfig
+E:\Yandex Disk\YandexDisk\prodaction\GitHub\ProjectShoolHelper_v0.1\Theory\obj\Debug\net7.0\Repository.AssemblyInfoInputs.cache
+E:\Yandex Disk\YandexDisk\prodaction\GitHub\ProjectShoolHelper_v0.1\Theory\obj\Debug\net7.0\Repository.AssemblyInfo.cs
+E:\Yandex Disk\YandexDisk\prodaction\GitHub\ProjectShoolHelper_v0.1\Theory\obj\Debug\net7.0\Repository.csproj.CoreCompileInputs.cache
+E:\Yandex Disk\YandexDisk\prodaction\GitHub\ProjectShoolHelper_v0.1\Theory\bin\Debug\net7.0\Repository.deps.json
+E:\Yandex Disk\YandexDisk\prodaction\GitHub\ProjectShoolHelper_v0.1\Theory\bin\Debug\net7.0\Repository.dll
+E:\Yandex Disk\YandexDisk\prodaction\GitHub\ProjectShoolHelper_v0.1\Theory\bin\Debug\net7.0\Repository.pdb
+E:\Yandex Disk\YandexDisk\prodaction\GitHub\ProjectShoolHelper_v0.1\Theory\obj\Debug\net7.0\Repository.dll
+E:\Yandex Disk\YandexDisk\prodaction\GitHub\ProjectShoolHelper_v0.1\Theory\obj\Debug\net7.0\refint\Repository.dll
+E:\Yandex Disk\YandexDisk\prodaction\GitHub\ProjectShoolHelper_v0.1\Theory\obj\Debug\net7.0\Repository.pdb
+E:\Yandex Disk\YandexDisk\prodaction\GitHub\ProjectShoolHelper_v0.1\Theory\obj\Debug\net7.0\ref\Repository.dll

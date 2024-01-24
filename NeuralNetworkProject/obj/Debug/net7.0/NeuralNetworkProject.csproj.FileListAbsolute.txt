@@ -1,0 +1,15 @@
+E:\Yandex Disk\YandexDisk\prodaction\GitHub\ProjectShoolHelper_v0.1\NeuralNetworkProject\obj\Debug\net7.0\NeuralNetworkProject.csproj.AssemblyReference.cache
+E:\Yandex Disk\YandexDisk\prodaction\GitHub\ProjectShoolHelper_v0.1\NeuralNetworkProject\obj\Debug\net7.0\NeuralNetworkProject.GeneratedMSBuildEditorConfig.editorconfig
+E:\Yandex Disk\YandexDisk\prodaction\GitHub\ProjectShoolHelper_v0.1\NeuralNetworkProject\obj\Debug\net7.0\NeuralNetworkProject.AssemblyInfoInputs.cache
+E:\Yandex Disk\YandexDisk\prodaction\GitHub\ProjectShoolHelper_v0.1\NeuralNetworkProject\obj\Debug\net7.0\NeuralNetworkProject.AssemblyInfo.cs
+E:\Yandex Disk\YandexDisk\prodaction\GitHub\ProjectShoolHelper_v0.1\NeuralNetworkProject\obj\Debug\net7.0\NeuralNetworkProject.csproj.CoreCompileInputs.cache
+E:\Yandex Disk\YandexDisk\prodaction\GitHub\ProjectShoolHelper_v0.1\NeuralNetworkProject\bin\Debug\net7.0\NeuralNetworkProject.deps.json
+E:\Yandex Disk\YandexDisk\prodaction\GitHub\ProjectShoolHelper_v0.1\NeuralNetworkProject\bin\Debug\net7.0\NeuralNetworkProject.dll
+E:\Yandex Disk\YandexDisk\prodaction\GitHub\ProjectShoolHelper_v0.1\NeuralNetworkProject\bin\Debug\net7.0\NeuralNetworkProject.pdb
+E:\Yandex Disk\YandexDisk\prodaction\GitHub\ProjectShoolHelper_v0.1\NeuralNetworkProject\bin\Debug\net7.0\Settings.dll
+E:\Yandex Disk\YandexDisk\prodaction\GitHub\ProjectShoolHelper_v0.1\NeuralNetworkProject\bin\Debug\net7.0\Settings.pdb
+E:\Yandex Disk\YandexDisk\prodaction\GitHub\ProjectShoolHelper_v0.1\NeuralNetworkProject\obj\Debug\net7.0\NeuralNetworkProject.csproj.CopyComplete
+E:\Yandex Disk\YandexDisk\prodaction\GitHub\ProjectShoolHelper_v0.1\NeuralNetworkProject\obj\Debug\net7.0\NeuralNetworkProject.dll
+E:\Yandex Disk\YandexDisk\prodaction\GitHub\ProjectShoolHelper_v0.1\NeuralNetworkProject\obj\Debug\net7.0\refint\NeuralNetworkProject.dll
+E:\Yandex Disk\YandexDisk\prodaction\GitHub\ProjectShoolHelper_v0.1\NeuralNetworkProject\obj\Debug\net7.0\NeuralNetworkProject.pdb
+E:\Yandex Disk\YandexDisk\prodaction\GitHub\ProjectShoolHelper_v0.1\NeuralNetworkProject\obj\Debug\net7.0\ref\NeuralNetworkProject.dll

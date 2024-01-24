@@ -1,0 +1,17 @@
+E:\Yandex Disk\YandexDisk\prodaction\GitHub\ProjectShoolHelper_v0.1\SetNeuaralNetworkData\obj\Debug\net7.0\SetNeuaralNetworkData.csproj.AssemblyReference.cache
+E:\Yandex Disk\YandexDisk\prodaction\GitHub\ProjectShoolHelper_v0.1\SetNeuaralNetworkData\obj\Debug\net7.0\SetNeuaralNetworkData.GeneratedMSBuildEditorConfig.editorconfig
+E:\Yandex Disk\YandexDisk\prodaction\GitHub\ProjectShoolHelper_v0.1\SetNeuaralNetworkData\obj\Debug\net7.0\SetNeuaralNetworkData.AssemblyInfoInputs.cache
+E:\Yandex Disk\YandexDisk\prodaction\GitHub\ProjectShoolHelper_v0.1\SetNeuaralNetworkData\obj\Debug\net7.0\SetNeuaralNetworkData.AssemblyInfo.cs
+E:\Yandex Disk\YandexDisk\prodaction\GitHub\ProjectShoolHelper_v0.1\SetNeuaralNetworkData\obj\Debug\net7.0\SetNeuaralNetworkData.csproj.CoreCompileInputs.cache
+E:\Yandex Disk\YandexDisk\prodaction\GitHub\ProjectShoolHelper_v0.1\SetNeuaralNetworkData\bin\Debug\net7.0\SetNeuaralNetworkData.deps.json
+E:\Yandex Disk\YandexDisk\prodaction\GitHub\ProjectShoolHelper_v0.1\SetNeuaralNetworkData\bin\Debug\net7.0\SetNeuaralNetworkData.dll
+E:\Yandex Disk\YandexDisk\prodaction\GitHub\ProjectShoolHelper_v0.1\SetNeuaralNetworkData\bin\Debug\net7.0\SetNeuaralNetworkData.pdb
+E:\Yandex Disk\YandexDisk\prodaction\GitHub\ProjectShoolHelper_v0.1\SetNeuaralNetworkData\bin\Debug\net7.0\NeuralNetworkProject.dll
+E:\Yandex Disk\YandexDisk\prodaction\GitHub\ProjectShoolHelper_v0.1\SetNeuaralNetworkData\bin\Debug\net7.0\Settings.dll
+E:\Yandex Disk\YandexDisk\prodaction\GitHub\ProjectShoolHelper_v0.1\SetNeuaralNetworkData\bin\Debug\net7.0\NeuralNetworkProject.pdb
+E:\Yandex Disk\YandexDisk\prodaction\GitHub\ProjectShoolHelper_v0.1\SetNeuaralNetworkData\bin\Debug\net7.0\Settings.pdb
+E:\Yandex Disk\YandexDisk\prodaction\GitHub\ProjectShoolHelper_v0.1\SetNeuaralNetworkData\obj\Debug\net7.0\SetNeuaralNetworkData.csproj.CopyComplete
+E:\Yandex Disk\YandexDisk\prodaction\GitHub\ProjectShoolHelper_v0.1\SetNeuaralNetworkData\obj\Debug\net7.0\SetNeuaralNetworkData.dll
+E:\Yandex Disk\YandexDisk\prodaction\GitHub\ProjectShoolHelper_v0.1\SetNeuaralNetworkData\obj\Debug\net7.0\refint\SetNeuaralNetworkData.dll
+E:\Yandex Disk\YandexDisk\prodaction\GitHub\ProjectShoolHelper_v0.1\SetNeuaralNetworkData\obj\Debug\net7.0\SetNeuaralNetworkData.pdb
+E:\Yandex Disk\YandexDisk\prodaction\GitHub\ProjectShoolHelper_v0.1\SetNeuaralNetworkData\obj\Debug\net7.0\ref\SetNeuaralNetworkData.dll
