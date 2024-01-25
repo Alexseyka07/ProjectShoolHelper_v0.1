@@ -25,8 +25,12 @@ namespace NNAnswerTheQuestion
         private static double error;
         static void Main(string[] args)
         {
-
-            
+            TheoryRepository theoryRepository = new TheoryRepository();
+            var rules = theoryRepository.AllRules();
+            foreach ( var rule in rules )
+            {
+                Console.WriteLine( rule.Name + " " + rule.Description);
+            }
             
             
 
@@ -45,7 +49,7 @@ namespace NNAnswerTheQuestion
             data.GetData();
             trainingData = data.TrainingData;
             wordsData = data.WordsData;
-            topology = new Topology(data, inputCount: wordsData.Count, outputCount: 1, learningRate: 0.7, layers: new int[] { 10, 5 });
+            topology = new Topology(data, inputCount: wordsData.Count, outputCount: 2, learningRate: 0.7, layers: new int[] { 10, 5 });
             dataNeuralNetwork = new DataNeuralNetwork(dataNNName, topology);
             Learning();
 
