@@ -27,7 +27,7 @@ namespace SetWordsForNeuralNetwork
                 {
                     // Разбиваем каждую часть на две части, разделенные символом "$"
                     string[] array = arraySentensesAndValue[i].Split('$');
-                    double value = int.Parse(array[1]); // Преобразуем вторую часть в число
+                    double value = double.Parse(array[1]); // Преобразуем вторую часть в число
                     string sentense = RemovePunctuation(array[0]); // Удаляем пунктуацию из первой части
                     
                     result.Add(new Tuple<double, string>(value, sentense)); // Добавляем результат в список
@@ -41,7 +41,7 @@ namespace SetWordsForNeuralNetwork
 
             return result; // Возвращаем список результатов
         }
-
+        
         public Data SetTrainingData(string input)
         {
             List<Tuple<double, string>> sentenses = SetSentences(input);

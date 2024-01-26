@@ -18,7 +18,7 @@ namespace RepositoryDb.Repository
         {
             connection.Open();
             List<Rule> rules = new List<Rule>();
-            string command = "SELECT Rules.name, Rules.description FROM Rules";
+            string command = "SELECT * FROM Rules";
             commandDb = new SqliteCommand(command, connection);
 
             SqliteDataReader reader = commandDb.ExecuteReader();
@@ -30,11 +30,11 @@ namespace RepositoryDb.Repository
             {
                 while (reader.Read())
                 {
-                    //var id = reader.GetValue(0);
+                    var id = reader.GetValue(0);
                     var name = reader.GetValue(1);
                     var description = reader.GetValue(2);
                   //  var image = reader.GetValue(3);
-                    rules.Add(new Rule {  Name = (string)name, Description = (string)description });
+                    rules.Add(new Rule { Id = (int)(Int64)id, Name = (string)name, Description = (string)description });
                 }
             }
             connection.Close();

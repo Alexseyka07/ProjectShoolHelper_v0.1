@@ -12,7 +12,7 @@ namespace SetWordsForNeuralNetwork
         Data data;
         public Words()
         {
-            data = new Data() 
+            data = new Data("testData") 
             { 
                 TrainingData = new List<Tuple<double, double[]>>(),
                 WordsData = new Dictionary<string, int>()
