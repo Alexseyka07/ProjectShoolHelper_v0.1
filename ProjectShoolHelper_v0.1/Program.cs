@@ -46,7 +46,7 @@ namespace NNAnswerTheQuestion
             data.GetData();
             trainingData = data.TrainingData;
             wordsData = data.WordsData;
-            topology = new Topology(data, inputCount: wordsData.Count, outputCount: 1, learningRate: 0.7, layers: new int[] {100,50, 10, 5 });
+            topology = new Topology(data, inputCount: wordsData.Count, outputCount: 1, learningRate: 0.6, layers: new int[] {30});
             dataNeuralNetwork = new DataNeuralNetwork(dataNNName, topology);
             Learning();
 
@@ -70,11 +70,23 @@ namespace NNAnswerTheQuestion
                 var text = Console.ReadLine();
                 if (text == "l")
                 {
-                    error = neuralNetwork.Learn(trainingData, epoch: 30);
+                    error = neuralNetwork.Learn(trainingData, epoch: int.Parse(Console.ReadLine()));
 
                     Console.WriteLine($"Ошибка после обучения: {error}");
                 }
                 else if (text == "stop") break;
+                else if(text == "t")
+                {
+                    int res = 0;
+                    
+                    foreach (var item in trainingData)
+                    {
+                        Neuron outputNeuron1 = neuralNetwork.FeedForward(text, wordsData);
+                        var resNeuron = outputNeuron1.Output;
+                        if (item.Item1 == Math.Round(resNeuron, 1)) res++;
+                    }
+                    Console.WriteLine(res + "/" + trainingData.Count);
+                }
                 else if (text == "s")
                 {
                     dataNeuralNetwork.SetData(neuralNetwork.Layers);
@@ -84,7 +96,7 @@ namespace NNAnswerTheQuestion
                 {
                     Neuron outputNeuron1 = neuralNetwork.FeedForward(text, wordsData);
                     var res = outputNeuron1.Output;
-                    Console.WriteLine($"Классификация вопроса 1: {(res >= 0.5 ? "задача" : "вопрос о правиле")}");
+                    Console.WriteLine(res);
                 }
             }
         }
@@ -96,14 +108,15 @@ namespace NNAnswerTheQuestion
             {
                 Console.WriteLine($"[LEARNING]restart: {error}");
                 neuralNetwork = new NeuralNetwork(topology);
-                error = neuralNetwork.Learn(trainingData, epoch: 50);
+                error = neuralNetwork.Learn(trainingData, epoch: 30);
             }
             Console.WriteLine(error);
             Console.WriteLine("[Этап 2]");
-            while (error > 0.005)
+            
+            //while (error > 0.005)
             {
-                Console.WriteLine($"[LEARNING]more learning: {error}");
-                error = neuralNetwork.Learn(trainingData, epoch: 100);
+               // Console.WriteLine($"[LEARNING]more learning: {error}");
+               // error = neuralNetwork.Learn(trainingData, epoch: 100);
             }
             Console.WriteLine("[LEARNING] learning end");
             Console.WriteLine($"[LEARNING] error: {error}");
@@ -130,6 +143,7 @@ namespace NNAnswerTheQuestion
             string result = SetDataInTuple();
             data = SetSentenses.SetSentences(result);
             
+           
             SaveData(data);
         }
         private static string SetDataInTuple()

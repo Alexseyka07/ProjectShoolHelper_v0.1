@@ -38,9 +38,9 @@ namespace SetWordsForNeuralNetwork
 
         private string[] RemovePunctuationAndSplit(string input)
         {
-            input = Regex.Replace(input, @"[\p{P}-[.]]", string.Empty);
+            /*input = Regex.Replace(input, @"[\p{P}-[.]]", string.Empty);
             input = Regex.Replace(input,@"[$]",string.Empty);
-            input = Regex.Replace(input, @"[\d]", " ");
+            input = Regex.Replace(input, @"[\d]", " ");*/
             return input.Split();
         }
     }
