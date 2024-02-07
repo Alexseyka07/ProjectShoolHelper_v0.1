@@ -1,19 +1,16 @@
 ﻿using SchoolChatGPT_v1._0.NeuralNetworkClasses;
-using System;
-using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
 namespace SetWordsForNeuralNetwork
 {
     public class Words
     {
+        private Data data;
 
-
-        Data data;
         public Words()
         {
-            data = new Data("testData") 
-            { 
+            data = new Data("testData")
+            {
                 TrainingData = new List<Tuple<double, double[]>>(),
                 WordsData = new Dictionary<string, int>()
             };
@@ -23,7 +20,7 @@ namespace SetWordsForNeuralNetwork
         {
             string[] wordsSentence;
 
-            wordsSentence = RemovePunctuationAndSplit(input);
+            wordsSentence = input.Split();
             for (int j = 0; j < wordsSentence.Length; j++)
             {
                 if (!data.WordsData.ContainsKey(wordsSentence[j]))
@@ -32,15 +29,15 @@ namespace SetWordsForNeuralNetwork
                         data.WordsData.Add(wordsSentence[j], data.WordsData.Count + 1);
                 }
             }
-            
+
             return data;
         }
 
         private string[] RemovePunctuationAndSplit(string input)
         {
-            /*input = Regex.Replace(input, @"[\p{P}-[.]]", string.Empty);
-            input = Regex.Replace(input,@"[$]",string.Empty);
-            input = Regex.Replace(input, @"[\d]", " ");*/
+            input = Regex.Replace(input, @"[\p{P}-[.]]", string.Empty);
+            input = Regex.Replace(input, @"[$]", string.Empty);
+            input = Regex.Replace(input, @"[\d]", " ");
             return input.Split();
         }
     }

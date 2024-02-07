@@ -9,9 +9,7 @@ namespace SchoolChatGPT_v1._0.NeuralNetworkClasses
     /// </summary>
     public class Topology
     {
-        public List<Tuple<double, double[]>> TrainingData { get; }
-        public Dictionary<string, int> WordsData { get; }
-        public Data Data { get; }
+
         /// <summary>
         /// Количество входных нейронов.
         /// </summary>
@@ -39,40 +37,14 @@ namespace SchoolChatGPT_v1._0.NeuralNetworkClasses
         /// <param name="outputCount">Количество выходных нейронов.</param>
         /// <param name="learningRate">Коэффициент обучения нейронной сети.</param>
         /// <param name="layers">Список, содержащий количество нейронов в каждом скрытом слое.</param>
-        public Topology(Data data, int inputCount, int outputCount, double learningRate, params int[] layers)
+        public Topology(int inputCount, int outputCount, double learningRate, params int[] layers)
         {
-            if (inputCount <= 0 || outputCount <= 0 || learningRate <= 0 || layers == null)
-            {
-                throw new ArgumentException("Неправильно заданы параметры топологии нейронной сети.");
-            }
-
             InputCount = inputCount;
             OutputCount = outputCount;
             LearningRate = learningRate;
             HiddenLayers = new List<int>();
             HiddenLayers.AddRange(layers);
-            Data = data;
-            TrainingData = data.TrainingData;
-            WordsData = data.WordsData;
-            
-
-        }
-        public Topology(Data data, List<Tuple<double, double[]>> trainingData, Dictionary<string, int> wordsData, int inputCount, int outputCount, double learningRate, params int[] layers)
-        {
-            if (inputCount <= 0 || outputCount <= 0 || learningRate <= 0 || layers == null)
-            {
-                throw new ArgumentException("Неправильно заданы параметры топологии нейронной сети.");
-            }
-
-            InputCount = inputCount;
-            OutputCount = outputCount;
-            LearningRate = learningRate;
-            HiddenLayers = new List<int>();
-            HiddenLayers.AddRange(layers);
-            Data = data;
-            
-            TrainingData = trainingData;
-            WordsData = wordsData;
+           
         }
     }
 }

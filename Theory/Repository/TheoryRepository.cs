@@ -1,18 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.Design;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.Data.Sqlite;
+﻿using Microsoft.Data.Sqlite;
 using RepositoryDb.Models;
 
 namespace RepositoryDb.Repository
 {
     public class TheoryRepository
     {
-        SqliteConnection connection = new SqliteConnection(@"Data Source=E:\Yandex Disk\YandexDisk\prodaction\GitHub\ProjectShoolHelper_v0.1\Theory\bin\Debug\net7.0\TheoryDb.db");
-        SqliteCommand commandDb;
+        private SqliteConnection connection = new SqliteConnection(@"Data Source=E:\Yandex Disk\YandexDisk\prodaction\GitHub\ProjectShoolHelper_v0.1\Theory\bin\Debug\net7.0\TheoryDb.db");
+        private SqliteCommand commandDb;
 
         public List<Rule> AllRules()
         {
@@ -23,9 +17,6 @@ namespace RepositoryDb.Repository
 
             SqliteDataReader reader = commandDb.ExecuteReader();
 
-
-
-
             if (reader.HasRows)
             {
                 while (reader.Read())
@@ -33,7 +24,7 @@ namespace RepositoryDb.Repository
                     var id = reader.GetValue(0);
                     var name = reader.GetValue(1);
                     var description = reader.GetValue(2);
-                  //  var image = reader.GetValue(3);
+                    //  var image = reader.GetValue(3);
                     rules.Add(new Rule { Id = (int)(Int64)id, Name = (string)name, Description = (string)description });
                 }
             }
@@ -50,9 +41,7 @@ namespace RepositoryDb.Repository
             commandDb.Connection = connection;
             commandDb.ExecuteNonQuery();
             connection.Close();
-             return true;
+            return true;
         }
-
-        
     }
 }

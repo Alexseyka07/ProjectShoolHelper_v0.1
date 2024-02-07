@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using SchoolChatGPT_v1._0.NeuralNetworkClasses;
+﻿using SchoolChatGPT_v1._0.NeuralNetworkClasses;
 
 namespace SetWordsForNeuralNetwork
 {
@@ -8,7 +6,6 @@ namespace SetWordsForNeuralNetwork
     {
         private static Data SetWords(string input)
         {
-            Console.WriteLine("Введите слова:");
             Words words = new Words();
             return words.SetWords(input);
         }
@@ -18,11 +15,6 @@ namespace SetWordsForNeuralNetwork
             Data data = SetWords(input);
             Sentences sentences = new Sentences(data);
             return sentences.SetTrainingData(input);
-        }
-        
-        public static void SetDataINDb()
-        {
-
         }
     }
 }

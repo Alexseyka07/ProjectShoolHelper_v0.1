@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace SchoolChatGPT_v1._0.NeuralNetworkClasses
+﻿namespace SchoolChatGPT_v1._0.NeuralNetworkClasses
 {
     public class Neuron
     {
@@ -66,7 +63,6 @@ namespace SchoolChatGPT_v1._0.NeuralNetworkClasses
                 }
                 Inputs.Add(0);
             }
-
         }
 
         /// <summary>
@@ -93,17 +89,6 @@ namespace SchoolChatGPT_v1._0.NeuralNetworkClasses
             return Output;
         }
 
-        /// <summary>
-        /// Установка весов нейрона.
-        /// </summary>
-        /// <param name="weights">Новые значения весов.</param>
-        public void SetWeights(params double[] weights)
-        {
-            for (int i = 0; i < weights.Length; i++)
-            {
-                Weights[i] = weights[i];
-            }
-        }
 
         /// <summary>
         /// Обучение нейрона с учетом ошибки.

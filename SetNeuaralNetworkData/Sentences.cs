@@ -1,13 +1,11 @@
 ﻿using SchoolChatGPT_v1._0.NeuralNetworkClasses;
-using System;
-using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
 namespace SetWordsForNeuralNetwork
 {
     public class Sentences
     {
-        Data data;
+        private Data data;
 
         public Sentences(Data data)
         {
@@ -29,9 +27,8 @@ namespace SetWordsForNeuralNetwork
                     string[] array = arraySentensesAndValue[i].Split('$');
                     double value = double.Parse(array[1]); // Преобразуем вторую часть в число
                     string sentense = RemovePunctuation(array[0]); // Удаляем пунктуацию из первой части
-                    
+
                     result.Add(new Tuple<double, string>(value, sentense)); // Добавляем результат в список
-                    
                 }
                 catch
                 {
@@ -41,12 +38,11 @@ namespace SetWordsForNeuralNetwork
 
             return result; // Возвращаем список результатов
         }
-        
+
         public Data SetTrainingData(string input)
         {
             List<Tuple<double, string>> sentenses = SetSentences(input);
-           
-            
+
             for (int i = 0; i < sentenses.Count; i++)
             {
                 var vector = new double[data.WordsData.Count];

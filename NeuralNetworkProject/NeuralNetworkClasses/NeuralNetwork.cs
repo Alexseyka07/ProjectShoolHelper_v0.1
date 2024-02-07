@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text.RegularExpressions;
-using System.Threading;
+﻿using System.Text.RegularExpressions;
 
 namespace SchoolChatGPT_v1._0.NeuralNetworkClasses
 {
@@ -40,15 +36,15 @@ namespace SchoolChatGPT_v1._0.NeuralNetworkClasses
             Layers = new List<Layer>();
             Layers = layers;
         }
+
         /// <summary>
         /// Выполняет прямое распространение сигнала через нейронную сеть.
         /// </summary>
         /// <param name="inputSignals">Входные сигналы.</param>
         /// <returns>Выходной нейрон (или нейроны) сети.</returns>
-        public Neuron FeedForward(string inputSignalsText, Dictionary<string, int> vocabulary)
+        public Neuron FeedForward(string inputSignalsText, Dictionary<string, int> wordsData)
         {
-
-            var inputSignals = VectorizeText(inputSignalsText);
+            var inputSignals = VectorizeText(inputSignalsText, wordsData);
             SendSignalsToInputNeurons(inputSignals);
             FeedForwardAddLayersAfterInput();
 
@@ -56,7 +52,7 @@ namespace SchoolChatGPT_v1._0.NeuralNetworkClasses
                 return Layers.Last().Neurons.OrderByDescending(n => n.Output).First();
             return Layers.Last().Neurons[0];
         }
-
+        
         /// <summary>
         /// Выполняет прямое распространение сигнала через нейронную сеть.
         /// </summary>
@@ -71,7 +67,6 @@ namespace SchoolChatGPT_v1._0.NeuralNetworkClasses
                 return Layers.Last().Neurons.OrderByDescending(n => n.Output).First();
             return Layers.Last().Neurons[0];
         }
-
 
         /// <summary>
         /// Обучает нейронную сеть на обучающем наборе данных.
@@ -94,18 +89,17 @@ namespace SchoolChatGPT_v1._0.NeuralNetworkClasses
                 num++;
 
                 Console.SetCursorPosition(0, Console.CursorTop);
-                Console.Write($" Загружено: {CalculatePercentage(num, epoch)}%");
+                Console.Write($"[NN {Topology.LearningRate}, HiddenNeurons{Layers[1].NeuronCount}] Загружено: {CalculatePercentage(num, epoch)}%");
             }
             Console.WriteLine();
             return error / epoch;
         }
 
-        static double CalculatePercentage(double number, double total)
+        private static double CalculatePercentage(double number, double total)
         {
-
             return (number / total) * 100;
-
         }
+
         /// <summary>
         /// Выполняет обратное распространение ошибки (обучение) для заданного обучающего примера.
         /// </summary>
@@ -231,11 +225,11 @@ namespace SchoolChatGPT_v1._0.NeuralNetworkClasses
         /// <param name="text">Текст для векторизации.</param>
         /// <param name="vocabulary">Словарь слов.</param>
         /// <returns>Числовой вектор, представляющий текст.</returns>
-        public double[] VectorizeText(string text)
+        public double[] VectorizeText(string text, Dictionary<string, int> wordsData)
         {
             text = Regex.Replace(text, @"[\p{P}-[.]]", string.Empty);
             var words = text.Split(' ');
-            var vector = new double[Topology.WordsData.Count];
+            var vector = new double[wordsData.Count];
             for (int i = 0; i < vector.Length; i++)
             {
                 vector[i] = 0;
@@ -244,9 +238,9 @@ namespace SchoolChatGPT_v1._0.NeuralNetworkClasses
             {
                 for (int j = i; j < words.Length; j++)
                 {
-                    if (Topology.WordsData.ContainsKey(words[j]))
+                    if (wordsData.ContainsKey(words[j]))
                     {
-                        var num = Topology.WordsData[words[j]];
+                        var num = wordsData[words[j]];
                         vector[num - 1] = 1.0;
                     }
                 }

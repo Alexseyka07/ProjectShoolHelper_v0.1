@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text.Json;
+﻿using System.Text.Json;
 
 namespace SchoolChatGPT_v1._0.NeuralNetworkClasses
 {
@@ -35,7 +32,6 @@ namespace SchoolChatGPT_v1._0.NeuralNetworkClasses
         /// </summary>
         public void GetData()
         {
-            
             path = Path.Combine(Settings.Settings.AppPath, $"{Name}.json");
             try
             {

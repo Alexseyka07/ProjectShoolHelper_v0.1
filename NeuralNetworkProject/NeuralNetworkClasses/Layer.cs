@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace SchoolChatGPT_v1._0.NeuralNetworkClasses
+﻿namespace SchoolChatGPT_v1._0.NeuralNetworkClasses
 {
     /// <summary>
     /// Класс, представляющий слой нейронов в нейронной сети.
@@ -33,18 +31,7 @@ namespace SchoolChatGPT_v1._0.NeuralNetworkClasses
             Neurons = neurons;
         }
 
-        /// <summary>
-        /// Выполняет прямое распространение сигнала через слой.
-        /// </summary>
-        /// <param name="inputs">Входной сигнал для слоя.</param>
-        public void FeedForward(List<double> inputs)
-        {
-            foreach (var neuron in Neurons)
-            {
-                neuron.FeedForward(inputs);
-            }
-        }
-
+        
         /// <summary>
         /// Получает сигналы выходов нейронов в слое.
         /// </summary>
@@ -59,13 +46,6 @@ namespace SchoolChatGPT_v1._0.NeuralNetworkClasses
             return result;
         }
 
-        /// <summary>
-        /// Переопределение метода ToString для вывода типа слоя.
-        /// </summary>
-        /// <returns>Тип слоя в виде строки.</returns>
-        public override string ToString()
-        {
-            return Type.ToString();
-        }
+       
     }
 }

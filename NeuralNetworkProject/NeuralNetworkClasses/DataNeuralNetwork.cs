@@ -1,8 +1,4 @@
-﻿using System.Collections.Generic;
-using System.IO;
-using System.Threading.Tasks;
-using Settings;
-using System.Text.Json;
+﻿using System.Text.Json;
 
 namespace SchoolChatGPT_v1._0.NeuralNetworkClasses
 {
@@ -16,8 +12,6 @@ namespace SchoolChatGPT_v1._0.NeuralNetworkClasses
         private string name;
         private string json;
         public List<Layer> Layers { get; set; }
-
-
 
         /// <summary>
         /// Пустой конструктор класса Data.
