@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34018.315
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectShoolHelper_v0.1", "ProjectShoolHelper_v0.1\ProjectShoolHelper_v0.1.csproj", "{82A91FE4-7CC7-40D6-AAF0-DA82B7AE03F3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectShoolHelper_v0.1", "ProjectShoolHelper_v0.1\ProjectShoolHelper_v0.1.csproj", "{82A91FE4-7CC7-40D6-AAF0-DA82B7AE03F3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeuralNetworkProject", "NeuralNetworkProject\NeuralNetworkProject.csproj", "{B0D2FB21-6F0C-4047-BF0A-D5C5F5023263}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NeuralNetworkProject", "NeuralNetworkProject\NeuralNetworkProject.csproj", "{B0D2FB21-6F0C-4047-BF0A-D5C5F5023263}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Settings", "Settings\Settings.csproj", "{1F597559-E755-47E4-8ED7-924C7E9BDC38}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Settings", "Settings\Settings.csproj", "{1F597559-E755-47E4-8ED7-924C7E9BDC38}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SetNeuaralNetworkData", "SetNeuaralNetworkData\SetNeuaralNetworkData.csproj", "{EDC80408-104C-44BF-A1A5-F90AEA919A52}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SetNeuaralNetworkData", "SetNeuaralNetworkData\SetNeuaralNetworkData.csproj", "{EDC80408-104C-44BF-A1A5-F90AEA919A52}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository", "Theory\Repository.csproj", "{FA6101DF-1D68-4D06-889C-E7D7544F03AF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repository", "Theory\Repository.csproj", "{FA6101DF-1D68-4D06-889C-E7D7544F03AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server_ProjectMathHelper_v1.0", "Server_ProjectMathHelper_v1.0\Server_ProjectMathHelper_v1.0.csproj", "{0F4DBD5F-32FB-41A0-8225-04284AAE55D4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{FA6101DF-1D68-4D06-889C-E7D7544F03AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FA6101DF-1D68-4D06-889C-E7D7544F03AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FA6101DF-1D68-4D06-889C-E7D7544F03AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F4DBD5F-32FB-41A0-8225-04284AAE55D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F4DBD5F-32FB-41A0-8225-04284AAE55D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F4DBD5F-32FB-41A0-8225-04284AAE55D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F4DBD5F-32FB-41A0-8225-04284AAE55D4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

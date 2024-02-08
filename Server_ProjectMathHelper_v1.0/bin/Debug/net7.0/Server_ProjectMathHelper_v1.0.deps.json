@@ -1,0 +1,64 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {
+      "Server_ProjectMathHelper_v1.0/1.0.0": {
+        "dependencies": {
+          "NeuralNetworkProject": "1.0.0",
+          "SetNeuaralNetworkData": "1.0.0"
+        },
+        "runtime": {
+          "Server_ProjectMathHelper_v1.0.dll": {}
+        }
+      },
+      "NeuralNetworkProject/1.0.0": {
+        "dependencies": {
+          "Settings": "1.0.0"
+        },
+        "runtime": {
+          "NeuralNetworkProject.dll": {}
+        }
+      },
+      "SetNeuaralNetworkData/1.0.0": {
+        "dependencies": {
+          "NeuralNetworkProject": "1.0.0",
+          "Settings": "1.0.0"
+        },
+        "runtime": {
+          "SetNeuaralNetworkData.dll": {}
+        }
+      },
+      "Settings/1.0.0": {
+        "runtime": {
+          "Settings.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Server_ProjectMathHelper_v1.0/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "NeuralNetworkProject/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SetNeuaralNetworkData/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Settings/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

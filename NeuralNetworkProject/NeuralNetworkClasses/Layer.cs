@@ -31,7 +31,6 @@
             Neurons = neurons;
         }
 
-        
         /// <summary>
         /// Получает сигналы выходов нейронов в слое.
         /// </summary>
@@ -45,7 +44,5 @@
             }
             return result;
         }
-
-       
     }
 }

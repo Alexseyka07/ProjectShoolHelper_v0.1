@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Xml;
-
-namespace SchoolChatGPT_v1._0.NeuralNetworkClasses
+﻿namespace SchoolChatGPT_v1._0.NeuralNetworkClasses
 {
     // <summary>
     /// Класс, представляющий топологию нейронной сети.
     /// </summary>
     public class Topology
     {
-
         /// <summary>
         /// Количество входных нейронов.
         /// </summary>
@@ -23,12 +18,16 @@ namespace SchoolChatGPT_v1._0.NeuralNetworkClasses
         /// <summary>
         /// Коэффициент обучения нейронной сети.
         /// </summary>
-        public double LearningRate { get; }
+        public double LearningRate { get; internal set; }
 
         /// <summary>
         /// Список, содержащий количество нейронов в каждом скрытом слое.
         /// </summary>
         public List<int> HiddenLayers { get; }
+
+        public List<Tuple<double, double[]>> TrainingData { get; }
+
+        public Dictionary<string, int> WordsData { get; }
 
         /// <summary>
         /// Инициализирует новый экземпляр класса Topology с указанными параметрами.
@@ -37,14 +36,15 @@ namespace SchoolChatGPT_v1._0.NeuralNetworkClasses
         /// <param name="outputCount">Количество выходных нейронов.</param>
         /// <param name="learningRate">Коэффициент обучения нейронной сети.</param>
         /// <param name="layers">Список, содержащий количество нейронов в каждом скрытом слое.</param>
-        public Topology(int inputCount, int outputCount, double learningRate, params int[] layers)
+        public Topology(Data data, int inputCount, int outputCount, double learningRate, params int[] layers)
         {
             InputCount = inputCount;
             OutputCount = outputCount;
             LearningRate = learningRate;
             HiddenLayers = new List<int>();
             HiddenLayers.AddRange(layers);
-           
+            TrainingData = data.TrainingData;
+            WordsData = data.WordsData;
         }
     }
 }

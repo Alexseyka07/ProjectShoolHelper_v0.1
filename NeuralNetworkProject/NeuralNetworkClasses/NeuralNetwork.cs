@@ -1,6 +1,4 @@
-﻿using System.Text.RegularExpressions;
-
-namespace SchoolChatGPT_v1._0.NeuralNetworkClasses
+﻿namespace SchoolChatGPT_v1._0.NeuralNetworkClasses
 {
     /// <summary>
     /// Класс, представляющий нейронную сеть.
@@ -42,22 +40,6 @@ namespace SchoolChatGPT_v1._0.NeuralNetworkClasses
         /// </summary>
         /// <param name="inputSignals">Входные сигналы.</param>
         /// <returns>Выходной нейрон (или нейроны) сети.</returns>
-        public Neuron FeedForward(string inputSignalsText, Dictionary<string, int> wordsData)
-        {
-            var inputSignals = VectorizeText(inputSignalsText, wordsData);
-            SendSignalsToInputNeurons(inputSignals);
-            FeedForwardAddLayersAfterInput();
-
-            if (Topology.OutputCount != 1)
-                return Layers.Last().Neurons.OrderByDescending(n => n.Output).First();
-            return Layers.Last().Neurons[0];
-        }
-        
-        /// <summary>
-        /// Выполняет прямое распространение сигнала через нейронную сеть.
-        /// </summary>
-        /// <param name="inputSignals">Входные сигналы.</param>
-        /// <returns>Выходной нейрон (или нейроны) сети.</returns>
         public Neuron FeedForward(params double[] inputSignals)
         {
             SendSignalsToInputNeurons(inputSignals);
@@ -74,7 +56,7 @@ namespace SchoolChatGPT_v1._0.NeuralNetworkClasses
         /// <param name="dataSet">Обучающий набор данных в формате (ожидаемый результат, входные данные).</param>
         /// <param name="epoch">Количество эпох обучения.</param>
         /// <returns>Среднеквадратичная ошибка после обучения.</returns>
-        public double Learn(List<Tuple<double, double[]>> dataSet, int epoch)
+        public double Learn(int epoch)
         {
             var error = 0.0;
             var num = 0;
@@ -82,7 +64,7 @@ namespace SchoolChatGPT_v1._0.NeuralNetworkClasses
             Console.WriteLine("Эпох пройденно:");
             for (int i = 0; i < epoch; i++)
             {
-                foreach (var data in dataSet)
+                foreach (var data in Topology.TrainingData)
                 {
                     error += BackPropagation(data.Item1, data.Item2);
                 }
@@ -92,6 +74,29 @@ namespace SchoolChatGPT_v1._0.NeuralNetworkClasses
                 Console.Write($"[NN {Topology.LearningRate}, HiddenNeurons{Layers[1].NeuronCount}] Загружено: {CalculatePercentage(num, epoch)}%");
             }
             Console.WriteLine();
+            return error / epoch;
+        }
+
+        public double Learn(int epoch, double learningRate)
+        {
+            var oldLearningRate = Topology.LearningRate;
+            Topology.LearningRate = learningRate;
+            var error = 0.0;
+            var num = 0;
+
+            for (int i = 0; i < epoch; i++)
+            {
+                foreach (var data in Topology.TrainingData)
+                {
+                    error += BackPropagation(data.Item1, data.Item2);
+                }
+                num++;
+
+                Console.SetCursorPosition(0, Console.CursorTop);
+                Console.Write($"[NN {Topology.LearningRate}, HiddenNeurons{Layers[1].NeuronCount}] Загружено: {CalculatePercentage(num, epoch)}%");
+            }
+            Console.WriteLine();
+            Topology.LearningRate = oldLearningRate;
             return error / epoch;
         }
 
@@ -217,36 +222,6 @@ namespace SchoolChatGPT_v1._0.NeuralNetworkClasses
             }
             var inputLayer = new Layer(inputNeurons, NeuronType.Input);
             Layers.Add(inputLayer);
-        }
-
-        /// <summary>
-        /// Векторизует текст, преобразуя его в числовой вектор на основе словаря.
-        /// </summary>
-        /// <param name="text">Текст для векторизации.</param>
-        /// <param name="vocabulary">Словарь слов.</param>
-        /// <returns>Числовой вектор, представляющий текст.</returns>
-        public double[] VectorizeText(string text, Dictionary<string, int> wordsData)
-        {
-            text = Regex.Replace(text, @"[\p{P}-[.]]", string.Empty);
-            var words = text.Split(' ');
-            var vector = new double[wordsData.Count];
-            for (int i = 0; i < vector.Length; i++)
-            {
-                vector[i] = 0;
-            }
-            for (int i = 0; i < 3; i++)
-            {
-                for (int j = i; j < words.Length; j++)
-                {
-                    if (wordsData.ContainsKey(words[j]))
-                    {
-                        var num = wordsData[words[j]];
-                        vector[num - 1] = 1.0;
-                    }
-                }
-            }
-
-            return vector;
         }
     }
 }

@@ -3,7 +3,6 @@ using RepositoryDb.Models;
 using RepositoryDb.Repository;
 using SchoolChatGPT_v1._0.NeuralNetworkClasses;
 using SetWordsForNeuralNetwork;
-using System.ComponentModel.Design;
 
 namespace NNAnswerTheQuestion
 {
@@ -17,22 +16,9 @@ namespace NNAnswerTheQuestion
         private static string dataNNName;
         private static double error;
         private static List<Tuple<double, NeuralNetwork>> neuralNetworks = new List<Tuple<double, NeuralNetwork>>();
+
         private static void Main(string[] args)
         {
-            SetSentensesForData();
-            Thread[] threads = new Thread[6] 
-            {
-            new Thread(Init1), new Thread(Init2),
-            new Thread(Init3), new Thread(Init4),
-            new Thread(Init5), new Thread(Init6)
-            };
-            foreach (var thread in threads)
-            {
-                thread.Start();
-                Thread.Sleep(200);
-            }
-            Console.WriteLine($"[DATA] InputNeuronsCount: {data.WordsData.Count}");
-            Console.WriteLine($"[DATA] TrainingDataCount: {data.TrainingData.Count}");
             Console.ReadLine();
         }
 
@@ -41,42 +27,6 @@ namespace NNAnswerTheQuestion
             return new TheoryRepository().AllRules();
         }
 
-        private static void Init1()
-        {
-            Topology topology = new Topology(inputCount: data.WordsData.Count, outputCount: 1, learningRate: 0.6, layers: new int[] { 30 });
-            //dataNeuralNetwork = new DataNeuralNetwork(dataNNName, topology);
-            Learning(topology);
-        }
-        private static void Init2()
-        {
-            Topology topology = new Topology(inputCount: data.WordsData.Count, outputCount: 1, learningRate: 0.6, layers: new int[] { 50 });
-            //dataNeuralNetwork = new DataNeuralNetwork(dataNNName, topology);
-            Learning(topology);
-        }
-        private static void Init3()
-        {
-            Topology topology = new Topology(inputCount: data.WordsData.Count, outputCount: 1, learningRate: 0.6, layers: new int[] { 70 });
-            //dataNeuralNetwork = new DataNeuralNetwork(dataNNName, topology);
-            Learning(topology);
-        }
-        private static void Init4()
-        {
-            Topology topology = new Topology(inputCount: data.WordsData.Count, outputCount: 1, learningRate: 0.4, layers: new int[] { 30 });
-            //dataNeuralNetwork = new DataNeuralNetwork(dataNNName, topology);
-            Learning(topology);
-        }
-        private static void Init5()
-        {
-            Topology topology = new Topology(inputCount: data.WordsData.Count, outputCount: 1, learningRate: 0.4, layers: new int[] { 50 });
-            //dataNeuralNetwork = new DataNeuralNetwork(dataNNName, topology);
-            Learning(topology);
-        }
-        private static void Init6()
-        {
-            Topology topology = new Topology(inputCount: data.WordsData.Count, outputCount: 1, learningRate: 0.4, layers: new int[] { 70 });
-            //dataNeuralNetwork = new DataNeuralNetwork(dataNNName, topology);
-            Learning(topology);
-        }
         private static void Learning(Topology topology)
         {
             double error = FirstLearning(topology);
@@ -95,7 +45,7 @@ namespace NNAnswerTheQuestion
                 if (text == "l")
                 {
                     Console.WriteLine("Введитме количество эпох обучения");
-                    error = neuralNetwork.Learn(data.TrainingData, epoch: int.Parse(Console.ReadLine()));
+                    error = neuralNetwork.Learn(epoch: int.Parse(Console.ReadLine()));
 
                     Console.WriteLine($"Ошибка после обучения: {error}");
                 }
@@ -120,17 +70,14 @@ namespace NNAnswerTheQuestion
                 }
                 else
                 {
-                    Neuron outputNeuron1 = neuralNetwork.FeedForward(text, data.WordsData);
-                    var res = outputNeuron1.Output;
-                    Console.WriteLine(FindClosestNumber(res));
                 }
             }
             Menu();
         }
 
-        private static double FindClosestNumber( double target)
+        private static double FindClosestNumber(double target)
         {
-            double[] numbers = { 0.13,0.16, 0.19 };
+            double[] numbers = { 0.13, 0.16, 0.19 };
 
             double closestNumber = numbers[0];
             double minDifference = Math.Abs(numbers[0] - target);
@@ -152,17 +99,15 @@ namespace NNAnswerTheQuestion
         {
             double error = 100;
 
-           
-            
-              NeuralNetwork  neuralNetwork = new NeuralNetwork(topology);
+            NeuralNetwork neuralNetwork = new NeuralNetwork(topology);
             Console.WriteLine($"[LEARNING]start: LearningRate: {topology.LearningRate}, HiddenNeurons: {neuralNetwork.Layers[1].NeuronCount}");
-            error = neuralNetwork.Learn(data.TrainingData, epoch: 100);
-            neuralNetworks.Add(new Tuple<double, NeuralNetwork>(error,neuralNetwork));
-            if(neuralNetworks.Count == 6)
+            error = neuralNetwork.Learn(epoch: 100);
+            neuralNetworks.Add(new Tuple<double, NeuralNetwork>(error, neuralNetwork));
+            if (neuralNetworks.Count == 6)
             {
                 foreach (var item in neuralNetworks)
                 {
-                    Console.WriteLine("----------------------------------------------------------------");                  
+                    Console.WriteLine("----------------------------------------------------------------");
                     Console.WriteLine($"[DATA] Learning Rate: {topology.LearningRate}");
                     Console.WriteLine("[LEARNING] learning end");
                     Console.WriteLine($"[NN Learning Rate {item.Item2.Topology.LearningRate}]");
@@ -172,15 +117,13 @@ namespace NNAnswerTheQuestion
                 }
                 Menu();
             }
-           
-
-            
 
             return error;
         }
+
         private static void Menu()
         {
-            while(true)
+            while (true)
             {
                 try
                 {
@@ -190,11 +133,11 @@ namespace NNAnswerTheQuestion
                 }
                 catch (Exception)
                 {
-
                     Console.WriteLine("еще раз");
                 }
             }
         }
+
         private static bool SaveData(Data d)
         {
             try
