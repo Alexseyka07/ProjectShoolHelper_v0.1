@@ -2,18 +2,11 @@
 
 namespace Server_ProjectMathHelper_v1._0.Classes
 {
-    public class Working
+    public static class Working
     {
-        private NeuralNetworkRepository neuralNetworkRepository;
-
-        public Working(NeuralNetworkRepository neuralNetworkRepository)
+        public static double Work(string input, NeuralNetwork neuralNetwork)
         {
-            this.neuralNetworkRepository = neuralNetworkRepository;
-        }
-
-        public double Work(string input, NeuralNetwork neuralNetwork)
-        {
-            return neuralNetworkRepository.Work(neuralNetwork, input);
+            return Program.neuralNetworkRepository.Work(neuralNetwork, input);
         }
     }
 }

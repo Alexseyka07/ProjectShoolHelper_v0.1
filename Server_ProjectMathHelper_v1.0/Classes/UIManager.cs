@@ -3,19 +3,12 @@
 namespace Server_ProjectMathHelper_v1._0.Classes
 {
     public class UIManager
-    {
-        private NeuralNetworkRepository neuralNetworkRepository;
-
-        private List<NeuralNetwork> neuralNetworks;
-
-        public UIManager(NeuralNetworkRepository neuralNetworkRepository)
+    {      
+        private  List<NeuralNetwork> neuralNetworks;
+    
+        public  void UIMenu(List<NeuralNetwork> neuralNetworksList)
         {
-            this.neuralNetworkRepository = neuralNetworkRepository;
-        }
-
-        public void UIMenu(List<NeuralNetwork> neuralNetworks)
-        {
-            this.neuralNetworks = neuralNetworks;
+            neuralNetworks = neuralNetworksList;
             while (true)
             {
                 Console.WriteLine("Что бы начать работу напишите номер нейросети");
@@ -36,30 +29,34 @@ namespace Server_ProjectMathHelper_v1._0.Classes
                 var input = Console.ReadLine();
                 if (input == "l")
                 {
-                    Console.WriteLine($"Ошибка после обучения: {Learning(neuralNetwork, int.Parse(Console.ReadLine()))}");
+                    Console.WriteLine($"Ошибка после обучения: {Learn(neuralNetwork, int.Parse(Console.ReadLine()))}");
                 }
                 else if (input == "stop") break;
                 else if (input == "t")
                 {
                     Console.WriteLine(Testing(neuralNetwork) + "/" + neuralNetwork.Topology.TrainingData.Count);
                 }
+                else if(input == "save")
+                {
+                    Program.data.SetDataNeuralNetwork(neuralNetwork);
+                }
                 else
                 {
-                    Console.WriteLine(Working(neuralNetwork, input));
+                    Console.WriteLine(Work(neuralNetwork, input));
                 }
             }
             UIMenu();
         }
 
-        private double Working(NeuralNetwork neuralNetwork, string input)
+        private double Work(NeuralNetwork neuralNetwork, string input)
         {
-            return neuralNetworkRepository.FindClosestOutput(new Working(neuralNetworkRepository).Work(input, neuralNetwork), neuralNetwork.Topology.TrainingData);
+            return Program.neuralNetworkRepository.FindClosestOutput(Working.Work(input, neuralNetwork), neuralNetwork.Topology.TrainingData);
         }
 
-        private double Learning(NeuralNetwork neuralNetwork, int epoch)
+        private double Learn(NeuralNetwork neuralNetwork, int epoch)
         {
             Console.WriteLine("Введитме количество эпох обучения");
-            return new Learning(neuralNetworkRepository).StartLearning(neuralNetwork, epoch)[0].Item1;
+            return Learning.StartLearning(neuralNetwork, epoch)[0].Item1;
         }
 
         private int Testing(NeuralNetwork neuralNetwork)
@@ -69,7 +66,7 @@ namespace Server_ProjectMathHelper_v1._0.Classes
             {
                 Neuron outputNeuron1 = neuralNetwork.FeedForward(item.Item2);
                 var resNeuron = outputNeuron1.Output;
-                if (item.Item1 == neuralNetworkRepository.FindClosestOutput(resNeuron, neuralNetwork.Topology.TrainingData))
+                if (item.Item1 == Program.neuralNetworkRepository.FindClosestOutput(resNeuron, neuralNetwork.Topology.TrainingData))
                     res++;
             }
             return res;
