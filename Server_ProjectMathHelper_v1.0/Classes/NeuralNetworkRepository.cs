@@ -93,13 +93,13 @@ namespace Server_ProjectMathHelper_v1._0.Classes
         /// Векторизует текст, преобразуя его в числовой вектор на основе словаря.
         /// </summary>
         /// <param name="text">Текст для векторизации.</param>
-        /// <param name="vocabulary">Словарь слов.</param>
+        /// <param name="vocabulary">Словарь слов, хранящихся в памяти.</param>
         /// <returns>Числовой вектор, представляющий текст.</returns>
         private double[] VectorizeText(Dictionary<string, int> wordsData, string input)
         {
-            input = Regex.Replace(input, @"[\p{P}-[.]]", string.Empty);
-            var words = input.Split(' ');
-            var vector = new double[wordsData.Count];
+            input = Regex.Replace(input, @"[\p{P}-[.]]", string.Empty); //удаление знаков препинания
+            var words = input.Split(' '); // превращение строки в массив слов
+            var vector = new double[wordsData.Count]; // создание пустого вектора
             for (int i = 0; i < vector.Length; i++)
             {
                 vector[i] = 0;
@@ -110,13 +110,13 @@ namespace Server_ProjectMathHelper_v1._0.Classes
                 {
                     if (wordsData.ContainsKey(words[j]))
                     {
-                        var num = wordsData[words[j]];
+                        var num = wordsData[words[j]]; // заполнение вектора единицами, там где это нужно
                         vector[num - 1] = 1.0;
                     }
                 }
             }
 
-            return vector;
+            return vector; // метод возвращает готовый вектор
         }
 
         private static string SetDataInTuple()

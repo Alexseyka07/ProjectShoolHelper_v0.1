@@ -15,3 +15,20 @@ E:\Yandex Disk\YandexDisk\prodaction\GitHub\ProjectShoolHelper_v0.1\SetNeuaralNe
 E:\Yandex Disk\YandexDisk\prodaction\GitHub\ProjectShoolHelper_v0.1\SetNeuaralNetworkData\obj\Debug\net7.0\refint\SetNeuaralNetworkData.dll
 E:\Yandex Disk\YandexDisk\prodaction\GitHub\ProjectShoolHelper_v0.1\SetNeuaralNetworkData\obj\Debug\net7.0\SetNeuaralNetworkData.pdb
 E:\Yandex Disk\YandexDisk\prodaction\GitHub\ProjectShoolHelper_v0.1\SetNeuaralNetworkData\obj\Debug\net7.0\ref\SetNeuaralNetworkData.dll
+E:\Alex\Prodaction\ProjectShoolHelper_v0.1\SetNeuaralNetworkData\bin\Debug\net7.0\SetNeuaralNetworkData.deps.json
+E:\Alex\Prodaction\ProjectShoolHelper_v0.1\SetNeuaralNetworkData\bin\Debug\net7.0\SetNeuaralNetworkData.dll
+E:\Alex\Prodaction\ProjectShoolHelper_v0.1\SetNeuaralNetworkData\bin\Debug\net7.0\SetNeuaralNetworkData.pdb
+E:\Alex\Prodaction\ProjectShoolHelper_v0.1\SetNeuaralNetworkData\bin\Debug\net7.0\NeuralNetworkProject.dll
+E:\Alex\Prodaction\ProjectShoolHelper_v0.1\SetNeuaralNetworkData\bin\Debug\net7.0\Settings.dll
+E:\Alex\Prodaction\ProjectShoolHelper_v0.1\SetNeuaralNetworkData\bin\Debug\net7.0\NeuralNetworkProject.pdb
+E:\Alex\Prodaction\ProjectShoolHelper_v0.1\SetNeuaralNetworkData\bin\Debug\net7.0\Settings.pdb
+E:\Alex\Prodaction\ProjectShoolHelper_v0.1\SetNeuaralNetworkData\obj\Debug\net7.0\SetNeuaralNetworkData.csproj.AssemblyReference.cache
+E:\Alex\Prodaction\ProjectShoolHelper_v0.1\SetNeuaralNetworkData\obj\Debug\net7.0\SetNeuaralNetworkData.GeneratedMSBuildEditorConfig.editorconfig
+E:\Alex\Prodaction\ProjectShoolHelper_v0.1\SetNeuaralNetworkData\obj\Debug\net7.0\SetNeuaralNetworkData.AssemblyInfoInputs.cache
+E:\Alex\Prodaction\ProjectShoolHelper_v0.1\SetNeuaralNetworkData\obj\Debug\net7.0\SetNeuaralNetworkData.AssemblyInfo.cs
+E:\Alex\Prodaction\ProjectShoolHelper_v0.1\SetNeuaralNetworkData\obj\Debug\net7.0\SetNeuaralNetworkData.csproj.CoreCompileInputs.cache
+E:\Alex\Prodaction\ProjectShoolHelper_v0.1\SetNeuaralNetworkData\obj\Debug\net7.0\SetNeuaralNetworkData.csproj.CopyComplete
+E:\Alex\Prodaction\ProjectShoolHelper_v0.1\SetNeuaralNetworkData\obj\Debug\net7.0\SetNeuaralNetworkData.dll
+E:\Alex\Prodaction\ProjectShoolHelper_v0.1\SetNeuaralNetworkData\obj\Debug\net7.0\refint\SetNeuaralNetworkData.dll
+E:\Alex\Prodaction\ProjectShoolHelper_v0.1\SetNeuaralNetworkData\obj\Debug\net7.0\SetNeuaralNetworkData.pdb
+E:\Alex\Prodaction\ProjectShoolHelper_v0.1\SetNeuaralNetworkData\obj\Debug\net7.0\ref\SetNeuaralNetworkData.dll

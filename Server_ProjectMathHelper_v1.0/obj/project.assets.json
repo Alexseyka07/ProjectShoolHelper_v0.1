@@ -6024,23 +6024,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Леша\\.nuget\\packages\\": {},
+    "C:\\Users\\Лёша\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Yandex Disk\\YandexDisk\\prodaction\\GitHub\\ProjectShoolHelper_v0.1\\Server_ProjectMathHelper_v1.0\\Server_ProjectMathHelper_v1.0.csproj",
+      "projectUniqueName": "E:\\Alex\\Prodaction\\ProjectShoolHelper_v0.1\\Server_ProjectMathHelper_v1.0\\Server_ProjectMathHelper_v1.0.csproj",
       "projectName": "Server_ProjectMathHelper_v1.0",
-      "projectPath": "E:\\Yandex Disk\\YandexDisk\\prodaction\\GitHub\\ProjectShoolHelper_v0.1\\Server_ProjectMathHelper_v1.0\\Server_ProjectMathHelper_v1.0.csproj",
-      "packagesPath": "C:\\Users\\Леша\\.nuget\\packages\\",
-      "outputPath": "E:\\Yandex Disk\\YandexDisk\\prodaction\\GitHub\\ProjectShoolHelper_v0.1\\Server_ProjectMathHelper_v1.0\\obj\\",
+      "projectPath": "E:\\Alex\\Prodaction\\ProjectShoolHelper_v0.1\\Server_ProjectMathHelper_v1.0\\Server_ProjectMathHelper_v1.0.csproj",
+      "packagesPath": "C:\\Users\\Лёша\\.nuget\\packages\\",
+      "outputPath": "E:\\Alex\\Prodaction\\ProjectShoolHelper_v0.1\\Server_ProjectMathHelper_v1.0\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Леша\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Лёша\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -6049,21 +6049,20 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "E:\\Yandex Disk\\YandexDisk\\prodaction\\GitHub\\ProjectShoolHelper_v0.1\\NeuralNetworkProject\\NeuralNetworkProject.csproj": {
-              "projectPath": "E:\\Yandex Disk\\YandexDisk\\prodaction\\GitHub\\ProjectShoolHelper_v0.1\\NeuralNetworkProject\\NeuralNetworkProject.csproj"
+            "E:\\Alex\\Prodaction\\ProjectShoolHelper_v0.1\\NeuralNetworkProject\\NeuralNetworkProject.csproj": {
+              "projectPath": "E:\\Alex\\Prodaction\\ProjectShoolHelper_v0.1\\NeuralNetworkProject\\NeuralNetworkProject.csproj"
             },
-            "E:\\Yandex Disk\\YandexDisk\\prodaction\\GitHub\\ProjectShoolHelper_v0.1\\SetNeuaralNetworkData\\SetNeuaralNetworkData.csproj": {
-              "projectPath": "E:\\Yandex Disk\\YandexDisk\\prodaction\\GitHub\\ProjectShoolHelper_v0.1\\SetNeuaralNetworkData\\SetNeuaralNetworkData.csproj"
+            "E:\\Alex\\Prodaction\\ProjectShoolHelper_v0.1\\SetNeuaralNetworkData\\SetNeuaralNetworkData.csproj": {
+              "projectPath": "E:\\Alex\\Prodaction\\ProjectShoolHelper_v0.1\\SetNeuaralNetworkData\\SetNeuaralNetworkData.csproj"
             },
-            "E:\\Yandex Disk\\YandexDisk\\prodaction\\GitHub\\ProjectShoolHelper_v0.1\\Theory\\Repository.csproj": {
-              "projectPath": "E:\\Yandex Disk\\YandexDisk\\prodaction\\GitHub\\ProjectShoolHelper_v0.1\\Theory\\Repository.csproj"
+            "E:\\Alex\\Prodaction\\ProjectShoolHelper_v0.1\\Theory\\Repository.csproj": {
+              "projectPath": "E:\\Alex\\Prodaction\\ProjectShoolHelper_v0.1\\Theory\\Repository.csproj"
             }
           }
         }
@@ -6099,7 +6098,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.405\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
       }
     }
   }

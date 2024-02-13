@@ -13,10 +13,6 @@ using Repository.Models;
 
 namespace Server_ProjectMathHelper_v1._0.Classes
 {
-    public enum Question
-    {
-        q0, q1, q2, q3, q4
-    }
     public class NetRepository
     {
         private static string token = "6965102213:AAEeF0AZP9H2GeosUSv0Dj27Lzy4qaVWvaM";
@@ -83,12 +79,12 @@ namespace Server_ProjectMathHelper_v1._0.Classes
             if (resultExample == msg.Text)
             {
                 SendMessage("Отлично! Это правильный ответ!");
-                SendMessage("Я надеюсь поиог вам разобраться в задаче, пишите ещё!");
+                SendMessage("Я надеюсь помог вам разобраться в правиле, пишите ещё!");
                 question = 0;
             }
             else
             {
-                SendMessage("Эхххх... Это не праильный ответ:( Попробуй ещё!");
+                SendMessage("Эхххх... Это не правильный ответ:( Попробуйте ещё!");
                 question = 4;
             }
            
@@ -124,7 +120,7 @@ namespace Server_ProjectMathHelper_v1._0.Classes
         }
         private void Work1()
         {
-            if(result.ToString() == msg.Text)
+            if("По теореме Пифагора" == msg.Text)
             {
                 SendMessage("Отлично! Тогда давай подробно разберём правило...");
                 var prop = Getprop(result);
@@ -145,7 +141,7 @@ namespace Server_ProjectMathHelper_v1._0.Classes
             switch (msg.Text)
             {
                 case "/start":
-                    SendMessageAndButtons("StartText", new List<List<KeyboardButton>>
+                    SendMessageAndButtons("Привет! Я помогу тебе решить любую задачу по математике", new List<List<KeyboardButton>>
                     {
                         new List<KeyboardButton>
                         {
@@ -156,7 +152,7 @@ namespace Server_ProjectMathHelper_v1._0.Classes
                              new KeyboardButton{Text = "/learn"}
                         }
                     });
-                    SendMessage("Привет! Я помогу тебе решить любую задачу по математике");
+                   
                     break;
                 case "/learn":
                     SendMessage("start learning");
@@ -166,9 +162,9 @@ namespace Server_ProjectMathHelper_v1._0.Classes
                     break;
                 default:
                     {
-                        result = neuralNetworkRepository.FindClosestOutput(neuralNetworkRepository.Work(neuralNetwork, msg.Text), data.TrainingData);
-
-                        SendMessage($"Давай попробуем решить эту задачу вместе! \n Слышали ли вы о {result}? Если да, то напишите эту тему, чтобы я понимал что вы не ошибаетесь)");
+                        //result = neuralNetworkRepository.FindClosestOutput(neuralNetworkRepository.Work(neuralNetwork, msg.Text), data.TrainingData);
+                        result = 0.1;
+                        SendMessage($"Давай попробуем решить эту задачу вместе! \n Как вы думайте, по каком правилу или теоеме решается задача? Если знаете, то напишите, чтобы я понимал что вы не ошибаетесь)");
                         question = 1;
                         break;
                     }

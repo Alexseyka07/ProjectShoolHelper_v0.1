@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Yandex Disk\\YandexDisk\\prodaction\\GitHub\\ProjectShoolHelper_v0.1\\ProjectShoolHelper_v0.1\\ProjectShoolHelper_v0.1.csproj": {}
+    "E:\\Alex\\Prodaction\\ProjectShoolHelper_v0.1\\ProjectShoolHelper_v0.1\\ProjectShoolHelper_v0.1.csproj": {}
   },
   "projects": {
-    "E:\\Yandex Disk\\YandexDisk\\prodaction\\GitHub\\ProjectShoolHelper_v0.1\\NeuralNetworkProject\\NeuralNetworkProject.csproj": {
+    "E:\\Alex\\Prodaction\\ProjectShoolHelper_v0.1\\NeuralNetworkProject\\NeuralNetworkProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Yandex Disk\\YandexDisk\\prodaction\\GitHub\\ProjectShoolHelper_v0.1\\NeuralNetworkProject\\NeuralNetworkProject.csproj",
+        "projectUniqueName": "E:\\Alex\\Prodaction\\ProjectShoolHelper_v0.1\\NeuralNetworkProject\\NeuralNetworkProject.csproj",
         "projectName": "NeuralNetworkProject",
-        "projectPath": "E:\\Yandex Disk\\YandexDisk\\prodaction\\GitHub\\ProjectShoolHelper_v0.1\\NeuralNetworkProject\\NeuralNetworkProject.csproj",
-        "packagesPath": "C:\\Users\\Леша\\.nuget\\packages\\",
-        "outputPath": "E:\\Yandex Disk\\YandexDisk\\prodaction\\GitHub\\ProjectShoolHelper_v0.1\\NeuralNetworkProject\\obj\\",
+        "projectPath": "E:\\Alex\\Prodaction\\ProjectShoolHelper_v0.1\\NeuralNetworkProject\\NeuralNetworkProject.csproj",
+        "packagesPath": "C:\\Users\\Лёша\\.nuget\\packages\\",
+        "outputPath": "E:\\Alex\\Prodaction\\ProjectShoolHelper_v0.1\\NeuralNetworkProject\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Леша\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Лёша\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,15 +26,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "E:\\Yandex Disk\\YandexDisk\\prodaction\\GitHub\\ProjectShoolHelper_v0.1\\Settings\\Settings.csproj": {
-                "projectPath": "E:\\Yandex Disk\\YandexDisk\\prodaction\\GitHub\\ProjectShoolHelper_v0.1\\Settings\\Settings.csproj"
+              "E:\\Alex\\Prodaction\\ProjectShoolHelper_v0.1\\Settings\\Settings.csproj": {
+                "projectPath": "E:\\Alex\\Prodaction\\ProjectShoolHelper_v0.1\\Settings\\Settings.csproj"
               }
             }
           }
@@ -64,24 +63,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.405\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\Yandex Disk\\YandexDisk\\prodaction\\GitHub\\ProjectShoolHelper_v0.1\\ProjectShoolHelper_v0.1\\ProjectShoolHelper_v0.1.csproj": {
+    "E:\\Alex\\Prodaction\\ProjectShoolHelper_v0.1\\ProjectShoolHelper_v0.1\\ProjectShoolHelper_v0.1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Yandex Disk\\YandexDisk\\prodaction\\GitHub\\ProjectShoolHelper_v0.1\\ProjectShoolHelper_v0.1\\ProjectShoolHelper_v0.1.csproj",
+        "projectUniqueName": "E:\\Alex\\Prodaction\\ProjectShoolHelper_v0.1\\ProjectShoolHelper_v0.1\\ProjectShoolHelper_v0.1.csproj",
         "projectName": "ProjectShoolHelper_v0.1",
-        "projectPath": "E:\\Yandex Disk\\YandexDisk\\prodaction\\GitHub\\ProjectShoolHelper_v0.1\\ProjectShoolHelper_v0.1\\ProjectShoolHelper_v0.1.csproj",
-        "packagesPath": "C:\\Users\\Леша\\.nuget\\packages\\",
-        "outputPath": "E:\\Yandex Disk\\YandexDisk\\prodaction\\GitHub\\ProjectShoolHelper_v0.1\\ProjectShoolHelper_v0.1\\obj\\",
+        "projectPath": "E:\\Alex\\Prodaction\\ProjectShoolHelper_v0.1\\ProjectShoolHelper_v0.1\\ProjectShoolHelper_v0.1.csproj",
+        "packagesPath": "C:\\Users\\Лёша\\.nuget\\packages\\",
+        "outputPath": "E:\\Alex\\Prodaction\\ProjectShoolHelper_v0.1\\ProjectShoolHelper_v0.1\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Леша\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Лёша\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -90,24 +89,23 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "E:\\Yandex Disk\\YandexDisk\\prodaction\\GitHub\\ProjectShoolHelper_v0.1\\NeuralNetworkProject\\NeuralNetworkProject.csproj": {
-                "projectPath": "E:\\Yandex Disk\\YandexDisk\\prodaction\\GitHub\\ProjectShoolHelper_v0.1\\NeuralNetworkProject\\NeuralNetworkProject.csproj"
+              "E:\\Alex\\Prodaction\\ProjectShoolHelper_v0.1\\NeuralNetworkProject\\NeuralNetworkProject.csproj": {
+                "projectPath": "E:\\Alex\\Prodaction\\ProjectShoolHelper_v0.1\\NeuralNetworkProject\\NeuralNetworkProject.csproj"
               },
-              "E:\\Yandex Disk\\YandexDisk\\prodaction\\GitHub\\ProjectShoolHelper_v0.1\\SetNeuaralNetworkData\\SetNeuaralNetworkData.csproj": {
-                "projectPath": "E:\\Yandex Disk\\YandexDisk\\prodaction\\GitHub\\ProjectShoolHelper_v0.1\\SetNeuaralNetworkData\\SetNeuaralNetworkData.csproj"
+              "E:\\Alex\\Prodaction\\ProjectShoolHelper_v0.1\\SetNeuaralNetworkData\\SetNeuaralNetworkData.csproj": {
+                "projectPath": "E:\\Alex\\Prodaction\\ProjectShoolHelper_v0.1\\SetNeuaralNetworkData\\SetNeuaralNetworkData.csproj"
               },
-              "E:\\Yandex Disk\\YandexDisk\\prodaction\\GitHub\\ProjectShoolHelper_v0.1\\Settings\\Settings.csproj": {
-                "projectPath": "E:\\Yandex Disk\\YandexDisk\\prodaction\\GitHub\\ProjectShoolHelper_v0.1\\Settings\\Settings.csproj"
+              "E:\\Alex\\Prodaction\\ProjectShoolHelper_v0.1\\Settings\\Settings.csproj": {
+                "projectPath": "E:\\Alex\\Prodaction\\ProjectShoolHelper_v0.1\\Settings\\Settings.csproj"
               },
-              "E:\\Yandex Disk\\YandexDisk\\prodaction\\GitHub\\ProjectShoolHelper_v0.1\\Theory\\Repository.csproj": {
-                "projectPath": "E:\\Yandex Disk\\YandexDisk\\prodaction\\GitHub\\ProjectShoolHelper_v0.1\\Theory\\Repository.csproj"
+              "E:\\Alex\\Prodaction\\ProjectShoolHelper_v0.1\\Theory\\Repository.csproj": {
+                "projectPath": "E:\\Alex\\Prodaction\\ProjectShoolHelper_v0.1\\Theory\\Repository.csproj"
               }
             }
           }
@@ -137,24 +135,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.405\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\Yandex Disk\\YandexDisk\\prodaction\\GitHub\\ProjectShoolHelper_v0.1\\SetNeuaralNetworkData\\SetNeuaralNetworkData.csproj": {
+    "E:\\Alex\\Prodaction\\ProjectShoolHelper_v0.1\\SetNeuaralNetworkData\\SetNeuaralNetworkData.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Yandex Disk\\YandexDisk\\prodaction\\GitHub\\ProjectShoolHelper_v0.1\\SetNeuaralNetworkData\\SetNeuaralNetworkData.csproj",
+        "projectUniqueName": "E:\\Alex\\Prodaction\\ProjectShoolHelper_v0.1\\SetNeuaralNetworkData\\SetNeuaralNetworkData.csproj",
         "projectName": "SetNeuaralNetworkData",
-        "projectPath": "E:\\Yandex Disk\\YandexDisk\\prodaction\\GitHub\\ProjectShoolHelper_v0.1\\SetNeuaralNetworkData\\SetNeuaralNetworkData.csproj",
-        "packagesPath": "C:\\Users\\Леша\\.nuget\\packages\\",
-        "outputPath": "E:\\Yandex Disk\\YandexDisk\\prodaction\\GitHub\\ProjectShoolHelper_v0.1\\SetNeuaralNetworkData\\obj\\",
+        "projectPath": "E:\\Alex\\Prodaction\\ProjectShoolHelper_v0.1\\SetNeuaralNetworkData\\SetNeuaralNetworkData.csproj",
+        "packagesPath": "C:\\Users\\Лёша\\.nuget\\packages\\",
+        "outputPath": "E:\\Alex\\Prodaction\\ProjectShoolHelper_v0.1\\SetNeuaralNetworkData\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Леша\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Лёша\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -163,18 +161,17 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "E:\\Yandex Disk\\YandexDisk\\prodaction\\GitHub\\ProjectShoolHelper_v0.1\\NeuralNetworkProject\\NeuralNetworkProject.csproj": {
-                "projectPath": "E:\\Yandex Disk\\YandexDisk\\prodaction\\GitHub\\ProjectShoolHelper_v0.1\\NeuralNetworkProject\\NeuralNetworkProject.csproj"
+              "E:\\Alex\\Prodaction\\ProjectShoolHelper_v0.1\\NeuralNetworkProject\\NeuralNetworkProject.csproj": {
+                "projectPath": "E:\\Alex\\Prodaction\\ProjectShoolHelper_v0.1\\NeuralNetworkProject\\NeuralNetworkProject.csproj"
               },
-              "E:\\Yandex Disk\\YandexDisk\\prodaction\\GitHub\\ProjectShoolHelper_v0.1\\Settings\\Settings.csproj": {
-                "projectPath": "E:\\Yandex Disk\\YandexDisk\\prodaction\\GitHub\\ProjectShoolHelper_v0.1\\Settings\\Settings.csproj"
+              "E:\\Alex\\Prodaction\\ProjectShoolHelper_v0.1\\Settings\\Settings.csproj": {
+                "projectPath": "E:\\Alex\\Prodaction\\ProjectShoolHelper_v0.1\\Settings\\Settings.csproj"
               }
             }
           }
@@ -204,24 +201,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.405\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\Yandex Disk\\YandexDisk\\prodaction\\GitHub\\ProjectShoolHelper_v0.1\\Settings\\Settings.csproj": {
+    "E:\\Alex\\Prodaction\\ProjectShoolHelper_v0.1\\Settings\\Settings.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Yandex Disk\\YandexDisk\\prodaction\\GitHub\\ProjectShoolHelper_v0.1\\Settings\\Settings.csproj",
+        "projectUniqueName": "E:\\Alex\\Prodaction\\ProjectShoolHelper_v0.1\\Settings\\Settings.csproj",
         "projectName": "Settings",
-        "projectPath": "E:\\Yandex Disk\\YandexDisk\\prodaction\\GitHub\\ProjectShoolHelper_v0.1\\Settings\\Settings.csproj",
-        "packagesPath": "C:\\Users\\Леша\\.nuget\\packages\\",
-        "outputPath": "E:\\Yandex Disk\\YandexDisk\\prodaction\\GitHub\\ProjectShoolHelper_v0.1\\Settings\\obj\\",
+        "projectPath": "E:\\Alex\\Prodaction\\ProjectShoolHelper_v0.1\\Settings\\Settings.csproj",
+        "packagesPath": "C:\\Users\\Лёша\\.nuget\\packages\\",
+        "outputPath": "E:\\Alex\\Prodaction\\ProjectShoolHelper_v0.1\\Settings\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Леша\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Лёша\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -230,7 +227,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -264,24 +260,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.405\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\Yandex Disk\\YandexDisk\\prodaction\\GitHub\\ProjectShoolHelper_v0.1\\Theory\\Repository.csproj": {
+    "E:\\Alex\\Prodaction\\ProjectShoolHelper_v0.1\\Theory\\Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Yandex Disk\\YandexDisk\\prodaction\\GitHub\\ProjectShoolHelper_v0.1\\Theory\\Repository.csproj",
+        "projectUniqueName": "E:\\Alex\\Prodaction\\ProjectShoolHelper_v0.1\\Theory\\Repository.csproj",
         "projectName": "Repository",
-        "projectPath": "E:\\Yandex Disk\\YandexDisk\\prodaction\\GitHub\\ProjectShoolHelper_v0.1\\Theory\\Repository.csproj",
-        "packagesPath": "C:\\Users\\Леша\\.nuget\\packages\\",
-        "outputPath": "E:\\Yandex Disk\\YandexDisk\\prodaction\\GitHub\\ProjectShoolHelper_v0.1\\Theory\\obj\\",
+        "projectPath": "E:\\Alex\\Prodaction\\ProjectShoolHelper_v0.1\\Theory\\Repository.csproj",
+        "packagesPath": "C:\\Users\\Лёша\\.nuget\\packages\\",
+        "outputPath": "E:\\Alex\\Prodaction\\ProjectShoolHelper_v0.1\\Theory\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Леша\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Лёша\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -290,7 +286,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -330,7 +325,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.405\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
         }
       }
     }
