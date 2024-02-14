@@ -1061,9 +1061,6 @@
         }
       },
       "NeuralNetworkProject/1.0.0": {
-        "dependencies": {
-          "Settings": "1.0.0"
-        },
         "runtime": {
           "NeuralNetworkProject.dll": {}
         }
@@ -1078,16 +1075,18 @@
       },
       "SetNeuaralNetworkData/1.0.0": {
         "dependencies": {
-          "NeuralNetworkProject": "1.0.0",
-          "Settings": "1.0.0"
+          "NeuralNetworkProject": "1.0.0"
         },
         "runtime": {
           "SetNeuaralNetworkData.dll": {}
         }
       },
-      "Settings/1.0.0": {
+      "Settings/1.0.0.0": {
         "runtime": {
-          "Settings.dll": {}
+          "Settings.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }
@@ -1820,8 +1819,8 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Settings/1.0.0": {
-      "type": "project",
+    "Settings/1.0.0.0": {
+      "type": "reference",
       "serviceable": false,
       "sha512": ""
     }

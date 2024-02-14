@@ -4,9 +4,7 @@ E:\Yandex Disk\YandexDisk\prodaction\GitHub\ProjectShoolHelper_v0.1\Server_Proje
 E:\Yandex Disk\YandexDisk\prodaction\GitHub\ProjectShoolHelper_v0.1\Server_ProjectMathHelper_v1.0\bin\Debug\net7.0\Server_ProjectMathHelper_v1.0.dll
 E:\Yandex Disk\YandexDisk\prodaction\GitHub\ProjectShoolHelper_v0.1\Server_ProjectMathHelper_v1.0\bin\Debug\net7.0\Server_ProjectMathHelper_v1.0.pdb
 E:\Yandex Disk\YandexDisk\prodaction\GitHub\ProjectShoolHelper_v0.1\Server_ProjectMathHelper_v1.0\bin\Debug\net7.0\NeuralNetworkProject.dll
-E:\Yandex Disk\YandexDisk\prodaction\GitHub\ProjectShoolHelper_v0.1\Server_ProjectMathHelper_v1.0\bin\Debug\net7.0\Settings.dll
 E:\Yandex Disk\YandexDisk\prodaction\GitHub\ProjectShoolHelper_v0.1\Server_ProjectMathHelper_v1.0\bin\Debug\net7.0\NeuralNetworkProject.pdb
-E:\Yandex Disk\YandexDisk\prodaction\GitHub\ProjectShoolHelper_v0.1\Server_ProjectMathHelper_v1.0\bin\Debug\net7.0\Settings.pdb
 E:\Yandex Disk\YandexDisk\prodaction\GitHub\ProjectShoolHelper_v0.1\Server_ProjectMathHelper_v1.0\obj\Debug\net7.0\Server_ProjectMathHelper_v1.0.csproj.AssemblyReference.cache
 E:\Yandex Disk\YandexDisk\prodaction\GitHub\ProjectShoolHelper_v0.1\Server_ProjectMathHelper_v1.0\obj\Debug\net7.0\Server_ProjectMathHelper_v1.0.GeneratedMSBuildEditorConfig.editorconfig
 E:\Yandex Disk\YandexDisk\prodaction\GitHub\ProjectShoolHelper_v0.1\Server_ProjectMathHelper_v1.0\obj\Debug\net7.0\Server_ProjectMathHelper_v1.0.AssemblyInfoInputs.cache

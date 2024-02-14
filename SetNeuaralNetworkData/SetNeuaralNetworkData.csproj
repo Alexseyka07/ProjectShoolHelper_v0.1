@@ -9,7 +9,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\NeuralNetworkProject\NeuralNetworkProject.csproj" />
-    <ProjectReference Include="..\Settings\Settings.csproj" />
   </ItemGroup>
 
 </Project>

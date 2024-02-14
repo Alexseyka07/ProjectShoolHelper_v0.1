@@ -7,27 +7,14 @@
   "targets": {
     ".NETCoreApp,Version=v7.0": {
       "NeuralNetworkProject/1.0.0": {
-        "dependencies": {
-          "Settings": "1.0.0"
-        },
         "runtime": {
           "NeuralNetworkProject.dll": {}
-        }
-      },
-      "Settings/1.0.0": {
-        "runtime": {
-          "Settings.dll": {}
         }
       }
     }
   },
   "libraries": {
     "NeuralNetworkProject/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Settings/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

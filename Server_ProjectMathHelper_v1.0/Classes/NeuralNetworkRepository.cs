@@ -99,20 +99,14 @@ namespace Server_ProjectMathHelper_v1._0.Classes
         {
             input = Regex.Replace(input, @"[\p{P}-[.]]", string.Empty); //удаление знаков препинания
             var words = input.Split(' '); // превращение строки в массив слов
-            var vector = new double[wordsData.Count]; // создание пустого вектора
-            for (int i = 0; i < vector.Length; i++)
+            // создание пустого вектора, где все элементы равны 0
+            var vector = new double[wordsData.Count].Select(x => x = 0).ToArray();
+            for (int j = 0; j < words.Length; j++)
             {
-                vector[i] = 0;
-            }
-            for (int i = 0; i < 3; i++)
-            {
-                for (int j = i; j < words.Length; j++)
+                if (wordsData.ContainsKey(words[j]))
                 {
-                    if (wordsData.ContainsKey(words[j]))
-                    {
-                        var num = wordsData[words[j]]; // заполнение вектора единицами, там где это нужно
-                        vector[num - 1] = 1.0;
-                    }
+                    var num = wordsData[words[j]]; // заполнение вектора единицами, там где это нужно
+                    vector[num - 1] = 1.0;
                 }
             }
 

@@ -79,8 +79,14 @@ namespace Server_ProjectMathHelper_v1._0.Classes
             if (resultExample == msg.Text)
             {
                 SendMessage("Отлично! Это правильный ответ!");
+                Thread.Sleep(100);
                 SendMessage("Я надеюсь помог вам разобраться в правиле, пишите ещё!");
                 question = 0;
+            }
+            if (msg.Text == "/start")
+            {
+                Start();
+
             }
             else
             {
@@ -98,6 +104,7 @@ namespace Server_ProjectMathHelper_v1._0.Classes
                     var examle = GetExemple(result);
                     resultExample = examle.Answer;
                     SendMessage(examle.Description);
+                    SendMessage("Напишите ответ:");
                     break;
                 case "Нет":
                     SendMessage("Хорошо, я помог вам всем тем чем мог. Если ещё понадоблюсь, обязательно пишите!");
@@ -127,6 +134,7 @@ namespace Server_ProjectMathHelper_v1._0.Classes
                 SendImage(prop.Image);
                 Thread.Sleep(100);
                 SendMessage(prop.Name + "\n\n" + prop.Description);
+                Thread.Sleep(100);
                 SendMessage("Стало ли более понятно?");
             }
             if (msg.Text == "/start")
@@ -141,7 +149,7 @@ namespace Server_ProjectMathHelper_v1._0.Classes
             switch (msg.Text)
             {
                 case "/start":
-                    SendMessageAndButtons("Привет! Я помогу тебе решить любую задачу по математике", new List<List<KeyboardButton>>
+                    SendMessageAndButtons("Привет! Я могу помочь тебе решить задачу по математике", new List<List<KeyboardButton>>
                     {
                         new List<KeyboardButton>
                         {
@@ -162,9 +170,9 @@ namespace Server_ProjectMathHelper_v1._0.Classes
                     break;
                 default:
                     {
-                        //result = neuralNetworkRepository.FindClosestOutput(neuralNetworkRepository.Work(neuralNetwork, msg.Text), data.TrainingData);
+                        result = neuralNetworkRepository.FindClosestOutput(neuralNetworkRepository.Work(neuralNetwork, msg.Text), data.TrainingData);
                         result = 0.1;
-                        SendMessage($"Давай попробуем решить эту задачу вместе! \n Как вы думайте, по каком правилу или теоеме решается задача? Если знаете, то напишите, чтобы я понимал что вы не ошибаетесь)");
+                        SendMessage($"Давайте попробуем решить эту задачу вместе!\nКак вы думайте, по каком правилу или теореме решается задача? Если знаете, то напишите название, чтобы я понимал что вы не ошибаетесь)");
                         question = 1;
                         break;
                     }

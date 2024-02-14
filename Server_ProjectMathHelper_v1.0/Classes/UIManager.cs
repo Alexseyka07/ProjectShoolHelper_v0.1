@@ -38,7 +38,7 @@ namespace Server_ProjectMathHelper_v1._0.Classes
                 }
                 else if(input == "save")
                 {
-                    Program.data.SetDataNeuralNetwork(neuralNetwork);
+                    //Program.data.SetDataNeuralNetwork(neuralNetwork);
                 }
                 else
                 {

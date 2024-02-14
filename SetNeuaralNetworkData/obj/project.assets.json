@@ -5,24 +5,11 @@
       "NeuralNetworkProject/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "Settings": "1.0.0"
-        },
         "compile": {
           "bin/placeholder/NeuralNetworkProject.dll": {}
         },
         "runtime": {
           "bin/placeholder/NeuralNetworkProject.dll": {}
-        }
-      },
-      "Settings/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v7.0",
-        "compile": {
-          "bin/placeholder/Settings.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Settings.dll": {}
         }
       }
     }
@@ -32,37 +19,31 @@
       "type": "project",
       "path": "../NeuralNetworkProject/NeuralNetworkProject.csproj",
       "msbuildProject": "../NeuralNetworkProject/NeuralNetworkProject.csproj"
-    },
-    "Settings/1.0.0": {
-      "type": "project",
-      "path": "../Settings/Settings.csproj",
-      "msbuildProject": "../Settings/Settings.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
-      "NeuralNetworkProject >= 1.0.0",
-      "Settings >= 1.0.0"
+      "NeuralNetworkProject >= 1.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Лёша\\.nuget\\packages\\": {},
+    "C:\\Users\\Леша\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Alex\\Prodaction\\ProjectShoolHelper_v0.1\\SetNeuaralNetworkData\\SetNeuaralNetworkData.csproj",
+      "projectUniqueName": "E:\\Yandex Disk\\YandexDisk\\prodaction\\GitHub\\ProjectShoolHelper_v0.1\\SetNeuaralNetworkData\\SetNeuaralNetworkData.csproj",
       "projectName": "SetNeuaralNetworkData",
-      "projectPath": "E:\\Alex\\Prodaction\\ProjectShoolHelper_v0.1\\SetNeuaralNetworkData\\SetNeuaralNetworkData.csproj",
-      "packagesPath": "C:\\Users\\Лёша\\.nuget\\packages\\",
-      "outputPath": "E:\\Alex\\Prodaction\\ProjectShoolHelper_v0.1\\SetNeuaralNetworkData\\obj\\",
+      "projectPath": "E:\\Yandex Disk\\YandexDisk\\prodaction\\GitHub\\ProjectShoolHelper_v0.1\\SetNeuaralNetworkData\\SetNeuaralNetworkData.csproj",
+      "packagesPath": "C:\\Users\\Леша\\.nuget\\packages\\",
+      "outputPath": "E:\\Yandex Disk\\YandexDisk\\prodaction\\GitHub\\ProjectShoolHelper_v0.1\\SetNeuaralNetworkData\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Лёша\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Леша\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -71,17 +52,15 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "E:\\Alex\\Prodaction\\ProjectShoolHelper_v0.1\\NeuralNetworkProject\\NeuralNetworkProject.csproj": {
-              "projectPath": "E:\\Alex\\Prodaction\\ProjectShoolHelper_v0.1\\NeuralNetworkProject\\NeuralNetworkProject.csproj"
-            },
-            "E:\\Alex\\Prodaction\\ProjectShoolHelper_v0.1\\Settings\\Settings.csproj": {
-              "projectPath": "E:\\Alex\\Prodaction\\ProjectShoolHelper_v0.1\\Settings\\Settings.csproj"
+            "E:\\Yandex Disk\\YandexDisk\\prodaction\\GitHub\\ProjectShoolHelper_v0.1\\NeuralNetworkProject\\NeuralNetworkProject.csproj": {
+              "projectPath": "E:\\Yandex Disk\\YandexDisk\\prodaction\\GitHub\\ProjectShoolHelper_v0.1\\NeuralNetworkProject\\NeuralNetworkProject.csproj"
             }
           }
         }
@@ -111,7 +90,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.405\\RuntimeIdentifierGraph.json"
       }
     }
   }
