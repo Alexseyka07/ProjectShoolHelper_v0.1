@@ -1,4 +1,5 @@
-﻿using SchoolChatGPT_v1._0.NeuralNetworkClasses;
+﻿using Repository;
+using SchoolChatGPT_v1._0.NeuralNetworkClasses;
 using SetWordsForNeuralNetwork;
 using System.Text.RegularExpressions;
 
@@ -55,8 +56,20 @@ namespace Server_ProjectMathHelper_v1._0.Classes
 
         public Data SetSentensesForData()
         {
-            string result = SetDataInTuple();
-            return SetSentenses.SetSentences(result);
+             string result = SetDataInTuple();
+            var data = SetSentenses.SetSentences(result);
+
+
+            data.TrainingData = new List<Tuple<double, double[]>>();
+               
+            
+            var dataDb = new DataDb();
+            foreach (var example in dataDb.Examples)
+            {
+                data.TrainingData.Add(new Tuple<double, double[]>(example.Property.Id, VectorizeText(data.WordsData, example.Description)));
+            }
+            return data;
+           
         }
 
         public double FindClosestOutput(double output, List<Tuple<double, double[]>> trainingData)
@@ -113,10 +126,10 @@ namespace Server_ProjectMathHelper_v1._0.Classes
             return vector; // метод возвращает готовый вектор
         }
 
-        private static string SetDataInTuple()
+        private static string SetDataInTuple(Data data)
         {
             string result = "";
-            List<Tuple<double, string>> trainingData = SetDataQuestions.SetWords();
+            List<Tuple<double, string>> trainingData = data.TrainingData;
             foreach (var item in trainingData)
             {
                 result += item.Item2 + " $" + item.Item1 + ": ";

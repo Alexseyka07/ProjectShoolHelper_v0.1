@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Repository.Models;
 using RepositoryDb.Models;
 
-namespace RepositoryDb.Data
+namespace Repository.Data
 {
     public class RulesContext : DbContext
     {

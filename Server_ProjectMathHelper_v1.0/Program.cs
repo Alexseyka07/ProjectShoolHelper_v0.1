@@ -1,7 +1,8 @@
-﻿using RepositoryDb.Models;
-using RepositoryDb.Data;
+﻿using Repository.Models;
+using Repository.Data;
 using SchoolChatGPT_v1._0.NeuralNetworkClasses;
 using Server_ProjectMathHelper_v1._0.Classes;
+using Repository;
 
 public static class Program
 {
@@ -11,7 +12,8 @@ public static class Program
 
     private static void Main(string[] args)
     {
-        Connect();
+        neuralNetworkRepository = new NeuralNetworkRepository();
+        data = neuralNetworkRepository.SetSentensesForData();
     }
     
     private static void Init()

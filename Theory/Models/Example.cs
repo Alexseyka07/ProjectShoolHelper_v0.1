@@ -13,7 +13,9 @@ namespace Repository.Models
         public string Description { get; set; }        
         public string Solution { get; set; }
         public string Answer { get; set; }
-        public string Image { get; set; }
+        public string ImageDescription { get; set; }
+
+        public string ImageSolution { get; set; }
 
         [ForeignKey("IdProperty")]
         public Property Property { get; set; }

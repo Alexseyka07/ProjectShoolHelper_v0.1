@@ -1080,14 +1080,6 @@
         "runtime": {
           "SetNeuaralNetworkData.dll": {}
         }
-      },
-      "Settings/1.0.0.0": {
-        "runtime": {
-          "Settings.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
-        }
       }
     }
   },
@@ -1816,11 +1808,6 @@
     },
     "SetNeuaralNetworkData/1.0.0": {
       "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Settings/1.0.0.0": {
-      "type": "reference",
       "serviceable": false,
       "sha512": ""
     }

@@ -7,8 +7,7 @@ using Telegram.Bot.Types.InputFiles;
 using System.Text.Json;
 using Telegram.Bot.Types.ReplyMarkups;
 using SchoolChatGPT_v1._0.NeuralNetworkClasses;
-using RepositoryDb.Models;
-using RepositoryDb.Data;
+
 using Repository.Models;
 
 namespace Server_ProjectMathHelper_v1._0.Classes
@@ -101,9 +100,7 @@ namespace Server_ProjectMathHelper_v1._0.Classes
             {
                 case "Да":
                     SendMessage("Отлично! Ловите задачу)");
-                    var examle = GetExemple(result);
-                    resultExample = examle.Answer;
-                    SendMessage(examle.Description);
+                   
                     SendMessage("Напишите ответ:");
                     break;
                 case "Нет":
@@ -130,11 +127,8 @@ namespace Server_ProjectMathHelper_v1._0.Classes
             if("По теореме Пифагора" == msg.Text)
             {
                 SendMessage("Отлично! Тогда давай подробно разберём правило...");
-                var prop = Getprop(result);
-                SendImage(prop.Image);
-                Thread.Sleep(100);
-                SendMessage(prop.Name + "\n\n" + prop.Description);
-                Thread.Sleep(100);
+               
+                
                 SendMessage("Стало ли более понятно?");
             }
             if (msg.Text == "/start")
@@ -178,22 +172,8 @@ namespace Server_ProjectMathHelper_v1._0.Classes
                     }
             }
         }
-        private Property Getprop(double res)
-        {
-            var context = new RulesContext();
-            var property = context.Properties.ToList().Where(x => x.Id == res * 10).FirstOrDefault();
-            return property;
-
-        }
-        private Example GetExemple(double res)
-        {
-            var context = new RulesContext();
-            var rules =  context.Rules.ToList();
-            var property = context.Properties.ToList();
-            var exemple = context.Examples.ToList();
-            return property.Where(x => x.Id == res * 10).FirstOrDefault().Examples.First();
-
-        }
+       
+       
 
         private async void SendMessage(string sendMessage)
         {
