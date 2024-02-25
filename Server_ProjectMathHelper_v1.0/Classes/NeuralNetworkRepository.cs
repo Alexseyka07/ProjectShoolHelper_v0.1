@@ -1,4 +1,6 @@
-﻿using Repository;
+﻿using NeuralNetworkProject.NeuralNetworkClasses;
+using Repository;
+using Repository.Models;
 using SchoolChatGPT_v1._0.NeuralNetworkClasses;
 using SetWordsForNeuralNetwork;
 using System.Text.RegularExpressions;
@@ -50,35 +52,68 @@ namespace Server_ProjectMathHelper_v1._0.Classes
         /// <returns></returns>
         public double Work(NeuralNetwork neuralNetwork, string input)
         {
-            Neuron outputNeuron = neuralNetwork.FeedForward(VectorizeText(neuralNetwork.Topology.WordsData, input));
+            Neuron outputNeuron = neuralNetwork.FeedForward(Vectorize.VectorizeText(neuralNetwork.Topology.WordsData, input));
             return outputNeuron.Output;
         }
-
         public Data SetSentensesForData()
         {
             var dataDb = new DataDb();
+            var favoriteWords = new Dictionary<string, double>()
+            {
+                {"высота", 1.0 },
+                {"высоты", 1.0 },
+                {"медиана", 1.0 },
+                {"высотой", 1.0 },
+                {"равнобедренный", 1.0 },
+                {"равнобедренном", 1.0 },
+                {"биссектриса", 1.0 },
+                {"периметр", 1.0 },
+                {"медианы", 1.0 },
+                {"гипотенуза", 1.0 },
+                {"катет", 1.0 },
+                {"катеты", 1.0 },
+                {"катетов", 1.0 },
+                {"прямоугольный", 1.0 },
+                {"прямоугольного", 1.0 },
+                {"гипотенузе", 1.0 },
+                {"треугольник", 0.0 },
+                {"параллельно", 1.0 },
+                {"параллельны", 1.0 },
+                {"параллельна", 1.0 },
+            };
             var data = new Data()
             {
                 TrainingData = new List<Tuple<double, double[]>>(),
                 WordsData = new Dictionary<string, int>()
             };
-
+           
             foreach (var example in dataDb.Examples)
             {
-                var exampleWords = example.Description.Split();
+                
+               var exampleT = Regex.Replace(example.Description, @"[\p{P}-[.]]", "");
+               exampleT = Regex.Replace(exampleT, @"[\d]", "");
+                exampleT = Regex.Replace(exampleT, "[A-Za-z]", "");
+                var exampleWords = Regex.Replace(exampleT, @"°", "").Split();
+                
+
                 foreach (var word in exampleWords)
                 {
                     if (!data.WordsData.ContainsKey(word))
                         data.WordsData.Add(word, data.WordsData.Count + 1);
                 }
                 
-            }          
+            } 
+                       
             foreach (var example in dataDb.Examples)
             {
-                data.TrainingData.Add(new Tuple<double, double[]>(example.Property.Id, VectorizeText(data.WordsData, example.Description)));
+
+                
+
+               data.TrainingData.Add(new Tuple<double, double[]>(example.Property.Rule.Id/10.0, Vectorize.VectorizeText(data.WordsData, example.Description, 0.5, favoriteWords)));
             }
-            return data;
            
+            
+            return data;
         }
 
         public double FindClosestOutput(double output, List<Tuple<double, double[]>> trainingData)
@@ -99,7 +134,6 @@ namespace Server_ProjectMathHelper_v1._0.Classes
 
             return closestOutput;
         }
-
         private double[] SetOutputs(List<Tuple<double, double[]>> trainingData)
         {
             var result = new List<double>();
@@ -110,33 +144,5 @@ namespace Server_ProjectMathHelper_v1._0.Classes
             }
             return result.ToArray();
         }
-
-        /// <summary>
-        /// Векторизует текст, преобразуя его в числовой вектор на основе словаря.
-        /// </summary>
-        /// <param name="text">Текст для векторизации.</param>
-        /// <param name="vocabulary">Словарь слов, хранящихся в памяти.</param>
-        /// <returns>Числовой вектор, представляющий текст.</returns>
-        private double[] VectorizeText(Dictionary<string, int> wordsData, string input)
-        {
-            input = Regex.Replace(input, @"[\p{P}-[.]]", string.Empty); //удаление знаков препинания
-            var words = input.Split(' '); // превращение строки в массив слов
-            // создание пустого вектора, где все элементы равны 0
-            var vector = new double[wordsData.Count].Select(x => x = 0).ToArray();
-            for (int j = 0; j < words.Length; j++)
-            {
-                if (wordsData.ContainsKey(words[j]))
-                {
-                    var num = wordsData[words[j]]; // заполнение вектора единицами, там где это нужно
-                    vector[num - 1] = 1.0;
-                }
-            }
-
-            return vector; // метод возвращает готовый вектор
-        }
-
-        
-
-       
     }
 }

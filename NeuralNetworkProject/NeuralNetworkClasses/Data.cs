@@ -9,11 +9,14 @@ namespace SchoolChatGPT_v1._0.NeuralNetworkClasses
     public class Data
     {
         public Dictionary<string, int> WordsData { get; set; }
+        public Dictionary<string, double> FavoriteWords { get; set; }
         public List<Tuple<double, double[]>> TrainingData { get; set; }
+        public double LearningRate { get; set; }
+     
         public List<Layer> Layers { get; set; }
         [JsonIgnore]
         public NeuralNetwork NeuralNetwork { get; set; }
-        public double LearningRate { get; set; }
+        [JsonIgnore]
         public string Name { get; set; }
 
         private string json;
@@ -21,22 +24,18 @@ namespace SchoolChatGPT_v1._0.NeuralNetworkClasses
         private Topology topology;
 
         
-        public Data()
-        {
-            Name = "testData.json";
-            path = AppDomain.CurrentDomain.BaseDirectory + Name;
-        }
+       
 
         /// <summary>
         /// Получить данные из файла JSON.
         /// </summary>
         public bool GetData()
         {
-
-            try
+           // try
             {
+                path = AppDomain.CurrentDomain.BaseDirectory + Name + ".json";
                 json = File.ReadAllText(path);
-                Data data = JsonSerializer.Deserialize<Data>(json);
+                var data = JsonSerializer.Deserialize<Data>(json);
                 TrainingData = data.TrainingData;
                 WordsData = data.WordsData;
                 Layers = data.Layers;
@@ -45,7 +44,7 @@ namespace SchoolChatGPT_v1._0.NeuralNetworkClasses
                 NeuralNetwork = new NeuralNetwork(topology, Layers);
                 return true;
             }
-            catch
+           // catch
             {             
               return false;
             }
@@ -56,6 +55,7 @@ namespace SchoolChatGPT_v1._0.NeuralNetworkClasses
         {
             try
             {
+                path = AppDomain.CurrentDomain.BaseDirectory + Name + ".json";
                 Data data = this;
                 json = JsonSerializer.Serialize(data);
                 File.WriteAllText(path, json);

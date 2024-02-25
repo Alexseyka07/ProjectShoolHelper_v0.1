@@ -14,12 +14,21 @@ public static class Program
     
     private static void Main(string[] args)
     {
-        neuralNetworkRepository = new NeuralNetworkRepository();
+        /*neuralNetworkRepository = new NeuralNetworkRepository();
         data = neuralNetworkRepository.SetSentensesForData();
-        var neuralNetwork = new NeuralNetwork(new Topology(data, inputCount: data.WordsData.Count, outputCount: 1, learningRate: 0.4, layers: new int[] { 30 }));
-        Console.WriteLine(neuralNetworkRepository.Learn(neuralNetwork, 50));
+        var neuralNetwork = new NeuralNetwork(new Topology(data, inputCount: data.WordsData.Count, outputCount: 1, learningRate: 0.5, layers: new int[] { 30 }));
+        Console.WriteLine(neuralNetworkRepository.Learn(neuralNetwork, 100));
         var uIManager = new UIManager();
-        uIManager.UIWork(neuralNetwork);
+        uIManager.UIWork(neuralNetwork);*/
+
+        neuralNetworkRepository = new NeuralNetworkRepository();
+        netRepository = new NetRepository();
+        data = new Data() {Name = "test" };
+        data.GetData();
+        var topolog = new Topology(data, inputCount: data.WordsData.Count, outputCount: 1, learningRate: data.LearningRate, layers: new int[] { 30 });
+        var neuralNetwork = new NeuralNetwork(topolog,data.Layers);
+        var uIManager = new UIManager();
+        uIManager.UIWork(neuralNetwork); 
     }
 
     private static void Init()

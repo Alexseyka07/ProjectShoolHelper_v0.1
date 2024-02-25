@@ -27,6 +27,8 @@
         /// </summary>
         public double Delta { get; private set; }
 
+        public int InputCount { get; private set; }
+
         /// <summary>
         /// Конструктор класса Neuron.
         /// </summary>
@@ -35,11 +37,12 @@
         public Neuron(int inputCount, NeuronType neuronType = NeuronType.Normal)
         {
             NeuronType = neuronType;
+            InputCount = inputCount;
             Weights = new List<double>();
             Inputs = new List<double>();
 
             // Инициализация весов случайными значениями
-            InitWeightsRandomValues(inputCount);
+            InitWeightsRandomValues(InputCount);
         }
 
         /// <summary>

@@ -1,4 +1,6 @@
-﻿namespace SchoolChatGPT_v1._0.NeuralNetworkClasses
+﻿using System.Text.Json.Serialization;
+
+namespace SchoolChatGPT_v1._0.NeuralNetworkClasses
 {
     /// <summary>
     /// Класс, представляющий слой нейронов в нейронной сети.
@@ -20,15 +22,17 @@
         /// </summary>
         public NeuronType Type { get; }
 
+
         /// <summary>
         /// Инициализирует новый экземпляр класса Layer с указанными нейронами и типом слоя.
         /// </summary>
         /// <param name="neurons">Список нейронов в слое.</param>
         /// <param name="neuronType">Тип слоя (по умолчанию Normal).</param>
-        public Layer(List<Neuron> neurons, NeuronType neuronType = NeuronType.Normal)
+ 
+        public Layer(List<Neuron> Neurons, NeuronType Type = NeuronType.Normal)
         {
-            Type = neuronType;
-            Neurons = neurons;
+            this.Type = Type;
+            this.Neurons = Neurons;
         }
 
         /// <summary>

@@ -31,7 +31,6 @@
         public NeuralNetwork(Topology topology, List<Layer> layers)
         {
             Topology = topology;
-            Layers = new List<Layer>();
             Layers = layers;
         }
 
