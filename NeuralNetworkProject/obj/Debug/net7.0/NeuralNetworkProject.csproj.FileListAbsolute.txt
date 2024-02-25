@@ -24,3 +24,15 @@ E:\Alex\Prodaction\ProjectShoolHelper_v0.1\NeuralNetworkProject\obj\Debug\net7.0
 E:\Alex\Prodaction\ProjectShoolHelper_v0.1\NeuralNetworkProject\obj\Debug\net7.0\refint\NeuralNetworkProject.dll
 E:\Alex\Prodaction\ProjectShoolHelper_v0.1\NeuralNetworkProject\obj\Debug\net7.0\NeuralNetworkProject.pdb
 E:\Alex\Prodaction\ProjectShoolHelper_v0.1\NeuralNetworkProject\obj\Debug\net7.0\ref\NeuralNetworkProject.dll
+C:\Users\Лёша\YandexDisk\Проект\ProjectShoolHelper_v0.1\NeuralNetworkProject\bin\Debug\net7.0\NeuralNetworkProject.deps.json
+C:\Users\Лёша\YandexDisk\Проект\ProjectShoolHelper_v0.1\NeuralNetworkProject\bin\Debug\net7.0\NeuralNetworkProject.dll
+C:\Users\Лёша\YandexDisk\Проект\ProjectShoolHelper_v0.1\NeuralNetworkProject\bin\Debug\net7.0\NeuralNetworkProject.pdb
+C:\Users\Лёша\YandexDisk\Проект\ProjectShoolHelper_v0.1\NeuralNetworkProject\obj\Debug\net7.0\NeuralNetworkProject.csproj.AssemblyReference.cache
+C:\Users\Лёша\YandexDisk\Проект\ProjectShoolHelper_v0.1\NeuralNetworkProject\obj\Debug\net7.0\NeuralNetworkProject.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Лёша\YandexDisk\Проект\ProjectShoolHelper_v0.1\NeuralNetworkProject\obj\Debug\net7.0\NeuralNetworkProject.AssemblyInfoInputs.cache
+C:\Users\Лёша\YandexDisk\Проект\ProjectShoolHelper_v0.1\NeuralNetworkProject\obj\Debug\net7.0\NeuralNetworkProject.AssemblyInfo.cs
+C:\Users\Лёша\YandexDisk\Проект\ProjectShoolHelper_v0.1\NeuralNetworkProject\obj\Debug\net7.0\NeuralNetworkProject.csproj.CoreCompileInputs.cache
+C:\Users\Лёша\YandexDisk\Проект\ProjectShoolHelper_v0.1\NeuralNetworkProject\obj\Debug\net7.0\NeuralNetworkProject.dll
+C:\Users\Лёша\YandexDisk\Проект\ProjectShoolHelper_v0.1\NeuralNetworkProject\obj\Debug\net7.0\refint\NeuralNetworkProject.dll
+C:\Users\Лёша\YandexDisk\Проект\ProjectShoolHelper_v0.1\NeuralNetworkProject\obj\Debug\net7.0\NeuralNetworkProject.pdb
+C:\Users\Лёша\YandexDisk\Проект\ProjectShoolHelper_v0.1\NeuralNetworkProject\obj\Debug\net7.0\ref\NeuralNetworkProject.dll

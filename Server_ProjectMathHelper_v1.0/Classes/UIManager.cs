@@ -21,7 +21,7 @@ namespace Server_ProjectMathHelper_v1._0.Classes
             }
         }
 
-        private void UIWork(NeuralNetwork neuralNetwork)
+        public void UIWork(NeuralNetwork neuralNetwork)
         {
             Console.WriteLine("[WORKING]");
             while (true)

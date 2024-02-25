@@ -10,16 +10,23 @@ public static class Program
     private static NetRepository netRepository;
     public static Data data;
 
+   
+    
     private static void Main(string[] args)
     {
         neuralNetworkRepository = new NeuralNetworkRepository();
         data = neuralNetworkRepository.SetSentensesForData();
+        var neuralNetwork = new NeuralNetwork(new Topology(data, inputCount: data.WordsData.Count, outputCount: 1, learningRate: 0.4, layers: new int[] { 30 }));
+        Console.WriteLine(neuralNetworkRepository.Learn(neuralNetwork, 50));
+        var uIManager = new UIManager();
+        uIManager.UIWork(neuralNetwork);
     }
-    
+
     private static void Init()
     {
         neuralNetworkRepository = new NeuralNetworkRepository();
         data = neuralNetworkRepository.SetSentensesForData();
+
     }
 
     private static void Connect()
