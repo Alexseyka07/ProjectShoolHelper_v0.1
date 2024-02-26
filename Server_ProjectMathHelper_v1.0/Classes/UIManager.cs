@@ -5,6 +5,7 @@ namespace Server_ProjectMathHelper_v1._0.Classes
     public class UIManager
     {      
         private  List<NeuralNetwork> neuralNetworks;
+        private NeuralNetworkRepository neuralNetworkRepository = new NeuralNetworkRepository();
     
         public  void UIMenu(List<NeuralNetwork> neuralNetworksList)
         {
@@ -38,39 +39,16 @@ namespace Server_ProjectMathHelper_v1._0.Classes
                 }
                 else if(input == "save")
                 {
-                    var favoriteWords = new Dictionary<string, double>()
-            {
-                {"высота", 1.0 },
-                {"высоты", 1.0 },
-                {"медиана", 1.0 },
-                {"высотой", 1.0 },
-                {"равнобедренный", 1.0 },
-                {"равнобедренном", 1.0 },
-                {"биссектриса", 1.0 },
-                {"периметр", 1.0 },
-                {"медианы", 1.0 },
-                {"гипотенуза", 1.0 },
-                {"катет", 1.0 },
-                {"катеты", 1.0 },
-                {"катетов", 1.0 },
-                {"прямоугольный", 1.0 },
-                {"прямоугольного", 1.0 },
-                {"гипотенузе", 1.0 },
-                {"треугольник", 0.0 },
-                {"параллельно", 1.0 },
-                {"параллельны", 1.0 },
-                {"параллельна", 1.0 },
-            };
                     Data data = new Data()
                     {
                         WordsData = neuralNetwork.Topology.WordsData,
                         TrainingData = neuralNetwork.Topology.TrainingData,
                         LearningRate = neuralNetwork.Topology.LearningRate,
-                        FavoriteWords = favoriteWords,
-                        
-                        Name = "test"
+                        FavoriteWords = neuralNetwork.Topology.FavoriteWords,
+                        Name = neuralNetwork.Topology.JsonName,
+                        Layers = neuralNetwork.Layers
                     };
-                    data.Layers = neuralNetwork.Layers;
+                   
                     data.SetData();
                 }
                 else
@@ -83,7 +61,7 @@ namespace Server_ProjectMathHelper_v1._0.Classes
 
         private double Work(NeuralNetwork neuralNetwork, string input)
         {
-            return Program.neuralNetworkRepository.FindClosestOutput(Working.Work(input, neuralNetwork), neuralNetwork.Topology.TrainingData);
+            return neuralNetworkRepository.FindClosestOutput(Working.Work(input, neuralNetwork), neuralNetwork.Topology.TrainingData);
         }
 
         private double Learn(NeuralNetwork neuralNetwork, int epoch)
@@ -99,7 +77,7 @@ namespace Server_ProjectMathHelper_v1._0.Classes
             {
                 Neuron outputNeuron1 = neuralNetwork.FeedForward(item.Item2);
                 var resNeuron = outputNeuron1.Output;
-                if (item.Item1 == Program.neuralNetworkRepository.FindClosestOutput(resNeuron, neuralNetwork.Topology.TrainingData))
+                if (item.Item1 == neuralNetworkRepository.FindClosestOutput(resNeuron, neuralNetwork.Topology.TrainingData))
                     res++;
             }
             return res;

@@ -10,6 +10,8 @@ namespace RepositoryDb.Models
         public string Description { get; set; }
         public string DetailedDescription { get; set; }
 
+        public string FavoriteWordsJson { get; set; }
+
         public List<Property> Properties { get; set;}
     }
 }

@@ -5,7 +5,6 @@ using Server_ProjectMathHelper_v1._0.Classes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Linq.Expressions;
 using System.Text;
 using System.Text.Json;
 using System.Text.RegularExpressions;
@@ -13,22 +12,20 @@ using System.Threading.Tasks;
 
 namespace Server_ProjectMathHelper_v1._0.Models
 {
-    public class FirstNeuralNetwork : NeuralNetworkModel
-    {       
-        public FirstNeuralNetwork(string jsonName) : base(jsonName) 
+    public class SecondNeuralNetwork : NeuralNetworkModel
+    {
+        private int ruleId;
+        List<Dictionary<string, double>> FavoriteWordsList = new List<Dictionary<string, double>>();
+        public SecondNeuralNetwork(string jsonName, int ruleId) : base(jsonName) 
         {
-          
+           
         }
         public override void LoadData()
         {
-            FavoriteWords = new Dictionary<string, double>();
+
             foreach (var rule in DataDb.Rules)
             {
-                foreach (var word  in JsonSerializer.Deserialize<Dictionary<string, double>>(rule.FavoriteWordsJson))
-                {
-                    FavoriteWords.Add(word.Key, word.Value);
-                }
-               
+                FavoriteWordsList.Add(JsonSerializer.Deserialize<Dictionary<string, double>>(rule.FavoriteWordsJson));
             }
             var isData = Data.GetData();
             if (isData) NeuralNetwork = Data.NeuralNetwork;
@@ -40,7 +37,7 @@ namespace Server_ProjectMathHelper_v1._0.Models
             base.SetData();
             foreach (var example in DataDb.Examples)
             {
-                Data.TrainingData.Add(new Tuple<double, double[]>(example.Property.Rule.Id / 10.0, Vectorize.VectorizeText(Data.WordsData, example.Description, 0.5, FavoriteWords)));
+                Data.TrainingData.Add(new Tuple<double, double[]>(example.Property.Id / 10.0, Vectorize.VectorizeText(Data.WordsData, example.Description, 0.5, FavoriteWords)));
             }
             Data.FavoriteWords = FavoriteWords;
             Data.LearningRate = 0.5;
