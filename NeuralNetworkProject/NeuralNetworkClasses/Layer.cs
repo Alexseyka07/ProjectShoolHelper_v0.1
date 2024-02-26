@@ -33,6 +33,8 @@ namespace SchoolChatGPT_v1._0.NeuralNetworkClasses
         {
             this.Type = Type;
             this.Neurons = Neurons;
+            if(Type == NeuronType.Normal)
+            { }
         }
 
         /// <summary>

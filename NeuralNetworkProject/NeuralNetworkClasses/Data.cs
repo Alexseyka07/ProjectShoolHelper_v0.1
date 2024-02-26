@@ -12,7 +12,7 @@ namespace SchoolChatGPT_v1._0.NeuralNetworkClasses
         public Dictionary<string, double> FavoriteWords { get; set; }
         public List<Tuple<double, double[]>> TrainingData { get; set; }
         public double LearningRate { get; set; }
-     
+        
         public List<Layer> Layers { get; set; }
         [JsonIgnore]
         public NeuralNetwork NeuralNetwork { get; set; }

@@ -1,4 +1,6 @@
-﻿namespace SchoolChatGPT_v1._0.NeuralNetworkClasses
+﻿using System.Text.Json.Serialization;
+
+namespace SchoolChatGPT_v1._0.NeuralNetworkClasses
 {
     /// <summary>
     /// Класс, представляющий нейронную сеть.
@@ -27,7 +29,7 @@
             CreateHiddenLayers();
             CreateOutputLayer();
         }
-
+        [JsonConstructor]
         public NeuralNetwork(Topology topology, List<Layer> layers)
         {
             Topology = topology;
