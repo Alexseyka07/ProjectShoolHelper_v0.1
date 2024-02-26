@@ -10,6 +10,7 @@ namespace Repository.Data
         public DbSet<Rule> Rules { get; set; }
         public DbSet<Property> Properties { get; set; }
         public DbSet<Example> Examples { get; set; }
+        public DbSet<NeuralNetworksData> NeuralNetworksData { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

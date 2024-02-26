@@ -47,12 +47,14 @@ namespace SchoolChatGPT_v1._0.NeuralNetworkClasses
             InitWeightsRandomValues(InputCount);
         }
         [JsonConstructor]
-        public Neuron(List<double> inputs, List<double> weights,int inputCount, NeuronType neuronType = NeuronType.Normal)
+        public Neuron(List<double> inputs, List<double> weights,int inputCount, double output, double delta, NeuronType neuronType = NeuronType.Normal)
         {
             NeuronType = neuronType;
             InputCount = inputCount;
             Weights = weights;
             Inputs = inputs; 
+            Output = output;
+            Delta = delta;
             if(neuronType == NeuronType.Normal) 
             { }
 

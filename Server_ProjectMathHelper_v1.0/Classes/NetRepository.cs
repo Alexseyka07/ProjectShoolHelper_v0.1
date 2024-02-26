@@ -27,7 +27,7 @@ namespace Server_ProjectMathHelper_v1._0.Classes
         {
             
             neuralNetworkRepository = new NeuralNetworkRepository();
-            data = neuralNetworkRepository.SetSentensesForData();
+            
             neuralNetwork = new NeuralNetwork(new Topology(data, inputCount: data.WordsData.Count, outputCount: 1, learningRate: 0.4, layers: new int[] { 30 }));
             
             client = new TelegramBotClient(token);

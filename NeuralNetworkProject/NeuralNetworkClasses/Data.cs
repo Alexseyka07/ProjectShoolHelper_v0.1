@@ -38,6 +38,7 @@ namespace SchoolChatGPT_v1._0.NeuralNetworkClasses
                 var data = JsonSerializer.Deserialize<Data>(json);
                 TrainingData = data.TrainingData;
                 WordsData = data.WordsData;
+                FavoriteWords = data.FavoriteWords;
                 Layers = data.Layers;
                 LearningRate = data.LearningRate;
                 topology = new Topology(data, WordsData.Count, 1, LearningRate, new int[] { 30 });
@@ -48,6 +49,7 @@ namespace SchoolChatGPT_v1._0.NeuralNetworkClasses
             {        
                 TrainingData = new List<Tuple<double, double[]>>();
                 WordsData = new Dictionary<string, int>();
+                FavoriteWords = new Dictionary<string, double>();
                 Layers = new List<Layer>();
                 LearningRate = 0;
 

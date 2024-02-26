@@ -1,5 +1,6 @@
 ﻿using NeuralNetworkProject.NeuralNetworkClasses;
 using Repository;
+using Repository.Models;
 using SchoolChatGPT_v1._0.NeuralNetworkClasses;
 using Server_ProjectMathHelper_v1._0.Classes;
 using System;
@@ -17,37 +18,49 @@ namespace Server_ProjectMathHelper_v1._0.Models
     {       
         public FirstNeuralNetwork(string jsonName) : base(jsonName) 
         {
+            LoadData();
           
         }
-        public override void LoadData()
+        private void LoadData()
+        {           
+            if (!Data.GetData())
+                SetData();
+            NeuralNetwork = Data.NeuralNetwork;
+        }
+
+       
+        private void SetData()
         {
-            FavoriteWords = new Dictionary<string, double>();
+            //Создание избр слов
             foreach (var rule in DataDb.Rules)
             {
-                foreach (var word  in JsonSerializer.Deserialize<Dictionary<string, double>>(rule.FavoriteWordsJson))
+                var json = JsonSerializer.Deserialize<Dictionary<string, double>>(rule.FavoriteWordsJson);
+                foreach (var word in json)
                 {
-                    FavoriteWords.Add(word.Key, word.Value);
+                    Data.FavoriteWords.Add(word.Key, word.Value);
                 }
-               
             }
-            var isData = Data.GetData();
-            if (isData) NeuralNetwork = Data.NeuralNetwork;
-            else SetData();
-            Topology = new Topology(Data, Data.WordsData.Count, 1, Data.LearningRate, new int[] {30});
-        }
-        public override void SetData()
-        {
-            base.SetData();
+            //Создание WordsData
             foreach (var example in DataDb.Examples)
             {
-                Data.TrainingData.Add(new Tuple<double, double[]>(example.Property.Rule.Id / 10.0, Vectorize.VectorizeText(Data.WordsData, example.Description, 0.5, FavoriteWords)));
+                var exampleWords = Vectorize.NormalizeText(example.Description);
+
+                foreach (var word in exampleWords)
+                {
+                    if (!Data.WordsData.ContainsKey(word))
+                        Data.WordsData.Add(word, Data.WordsData.Count + 1);
+                }
             }
-            Data.FavoriteWords = FavoriteWords;
-            Data.LearningRate = 0.5;
-            Data.NeuralNetwork = new NeuralNetwork(new Topology(Data, Data.WordsData.Count, 1, Data.LearningRate, new int[] {30 }));
+            //Создание TrainingData
+            foreach (var example in DataDb.Examples)
+            {
+                Data.TrainingData.Add(new Tuple<double, double[]>(example.Property.Rule.Id / 10.0, Vectorize.VectorizeText(Data.WordsData, example.Description, 0.5, Data.FavoriteWords)));
+            }
+            Console.WriteLine("введите LearningRate:");
+            Data.LearningRate = double.Parse(Console.ReadLine());
+            Data.NeuralNetwork = new NeuralNetwork(new Topology(Data, Data.WordsData.Count, 1, Data.LearningRate, new int[] { 30 }));
             Data.Layers = Data.NeuralNetwork.Layers;
-            Data.SetData();
-         
+            Data.SetData();        
         }
     }
 }

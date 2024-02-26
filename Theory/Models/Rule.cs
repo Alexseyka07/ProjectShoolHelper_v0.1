@@ -13,5 +13,7 @@ namespace RepositoryDb.Models
         public string FavoriteWordsJson { get; set; }
 
         public List<Property> Properties { get; set;}
+
+        public NeuralNetworksData NeuralNetworksData { get; set; }
     }
 }
