@@ -6,7 +6,7 @@ namespace Server_ProjectMathHelper_v1._0.Classes
     {
 
         private static List<Tuple<double, NeuralNetwork>> neuralNetworksResult = new List<Tuple<double, NeuralNetwork>>();
-
+        private static NeuralNetworkRepository neuralNetworkRepository = new NeuralNetworkRepository();
        
 
         public static List<Tuple<double, NeuralNetwork>> StartLearning(List<NeuralNetwork> listNeuralNetworks, int epoch)
@@ -44,7 +44,7 @@ namespace Server_ProjectMathHelper_v1._0.Classes
         private static Tuple<double, NeuralNetwork> Learn(NeuralNetwork neuralNetwork, int epoch)
         {
             Console.WriteLine($"[NEURALNETWORK: LEARNINGRATE:{neuralNetwork.Topology.LearningRate}, HIDDENNEURONS: {neuralNetwork.Layers[1].NeuronCount}] Learning START");
-            var error = Program.neuralNetworkRepository.Learn(neuralNetwork, epoch);
+            var error = neuralNetworkRepository.Learn(neuralNetwork, epoch);
             Info(neuralNetwork, error);
             return new Tuple<double, NeuralNetwork>(error, neuralNetwork);
         }

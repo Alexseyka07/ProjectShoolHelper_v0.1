@@ -31,7 +31,7 @@ namespace SchoolChatGPT_v1._0.NeuralNetworkClasses
         /// </summary>
         public bool GetData()
         {
-           // try
+            try
             {
                 path = AppDomain.CurrentDomain.BaseDirectory + Name + ".json";
                 json = File.ReadAllText(path);
@@ -44,8 +44,13 @@ namespace SchoolChatGPT_v1._0.NeuralNetworkClasses
                 NeuralNetwork = new NeuralNetwork(topology, Layers);
                 return true;
             }
-           // catch
-            {             
+            catch
+            {        
+                TrainingData = new List<Tuple<double, double[]>>();
+                WordsData = new Dictionary<string, int>();
+                Layers = new List<Layer>();
+                LearningRate = 0;
+
               return false;
             }
         }
