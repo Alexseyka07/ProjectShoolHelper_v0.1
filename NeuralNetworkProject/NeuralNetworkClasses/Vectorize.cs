@@ -54,7 +54,7 @@ namespace NeuralNetworkProject.NeuralNetworkClasses
             var exampleT = Regex.Replace(input, @"[\p{P}-[.]]", "");
             exampleT = Regex.Replace(exampleT, @"[\d]", "");
             exampleT = Regex.Replace(exampleT, "[A-Za-z]", "");
-            return Regex.Replace(exampleT, @"°", "").Split().ToList();
+            return Regex.Replace(exampleT, @"°", "").ToLower().Split().ToList();
 
         }
     }

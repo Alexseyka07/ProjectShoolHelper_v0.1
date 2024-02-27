@@ -10,8 +10,32 @@ public static class Program
     private static List<SecondNeuralNetwork> secondNeuralNetworks = new List<SecondNeuralNetwork>();
     private static void Main(string[] args)
     {
-        NetRepository netRepository = new NetRepository();
-        netRepository.Connect();
+         NetRepository netRepository = new NetRepository();
+         netRepository.Connect();
+      
+    }
+    
+    private static void LNN2()
+    {
+        DataDb dataDb = new DataDb();
+        for (int i = 1; i < dataDb.Rules.Where(x => x.Id <= 4).ToList().Count + 1; i++)
+        {
+            secondNeuralNetworks.Add(new SecondNeuralNetwork($"secondNN{i}", i));
 
+        }
+
+        foreach (var neuralNetwork in secondNeuralNetworks)
+        {
+            Console.WriteLine($"Start {neuralNetwork.JsonName}");
+            new Thread(() => { 
+                neuralNetwork.Learn(100);
+               neuralNetwork.SaveData(); }).Start();
+            Thread.Sleep(50);
+        }
+
+        
+        Console.WriteLine("learning end");
+        UIManager uiManager = new UIManager();
+        uiManager.UIMenu(secondNeuralNetworks);
     }
 }

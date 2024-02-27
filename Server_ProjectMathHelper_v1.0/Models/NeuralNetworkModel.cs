@@ -42,7 +42,7 @@ namespace Server_ProjectMathHelper_v1._0.Models
             Data.SetData();
         }
 
-        public double Work(string input)
+        public virtual double Work(string input)
         {
             return NeuralNetworkRepository.Work(NeuralNetwork, input);
         }

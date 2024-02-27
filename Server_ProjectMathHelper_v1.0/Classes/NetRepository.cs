@@ -24,7 +24,11 @@ namespace Server_ProjectMathHelper_v1._0.Classes
         private static TelegramBotClient client;
         private static DataDb dataDb = new DataDb();
         string a = "1";
+        private int badAnswer = 0;
+        private int solvedExamples = 0;
+        private bool exampleNotAnswer = false;
         private static NeuralNetworkRepository neuralNetworkRepository;
+        private AnswerNeuralNetwork answerNeuralNetwork;
         private List<SecondNeuralNetwork> secondNeuralNetworks;
         private FirstNeuralNetwork firstNeuralNetwork;
         private static Data data;
@@ -32,6 +36,7 @@ namespace Server_ProjectMathHelper_v1._0.Classes
         public NetRepository()
         {
             secondNeuralNetworks = new List<SecondNeuralNetwork>();
+            answerNeuralNetwork = new AnswerNeuralNetwork("AnswerNN");
             firstNeuralNetwork = new FirstNeuralNetwork("FirstNN");
             DataDb dataDb = new DataDb();
             for (int i = 1; i < dataDb.Rules.Where(x => x.Id <= 4).ToList().Count + 1; i++)
@@ -50,7 +55,7 @@ namespace Server_ProjectMathHelper_v1._0.Classes
             client = new TelegramBotClient(token);
             client.OnMessage += Client_OnMessage;   
             StartBot();
-            msg.Text = "/start";
+           
         }
 
         private void StartBot()
@@ -83,6 +88,7 @@ namespace Server_ProjectMathHelper_v1._0.Classes
                 case 4:
                     Work4();
                     break;
+                  
                 
 
             }
@@ -90,45 +96,82 @@ namespace Server_ProjectMathHelper_v1._0.Classes
         private void Start()
         {
             question = 0;
+            badAnswer = 0;
+            solvedExamples = 0;
         }
+
+
         private void Work4()
         {
-            if (resultExample == msg.Text)
-            {
-                SendMessage("Отлично! Это правильный ответ!");
-                Thread.Sleep(100);
-                SendMessage("Я надеюсь помог вам разобраться в правиле, пишите ещё!");
-                question = 0;
-            }
             if (msg.Text == "/start")
             {
                 Start();
-
+                return;
             }
-            else
+            if (resultExample == msg.Text)
             {
-                SendMessage("Эхххх... Это не правильный ответ:( Попробуйте ещё!");
-                question = 4;
+                SendMessage("Отлично! Это правильный ответ!");
+                solvedExamples++;
+                badAnswer = 0;
+                Thread.Sleep(100);
+               
+                SendMessage("Хочешь ещё задачку?");
+                question = 3;
+            }          
+            else
+            {              
+                badAnswer++;
+                if (badAnswer == 3)
+                {
+                    SendMessage("Походу эта задача слишком сложная. Вот решение на задачу, проанализируй его и пойми, что у вас не получилось:");
+                    var example = dataDb.Examples.Where(x => x.Property.Id == int.Parse(a)).ToList()[solvedExamples];
+                    SendMessage($"{example.Solution}\n Ответ:{example.Answer}");
+                    solvedExamples++;
+                    SendMessage("Хочешь ещё задачку?");
+                    question = 3;
+                }
+                else
+                {
+                    SendMessage("Эхххх... Это не правильный ответ:( Попробуйте ещё!");
+                    question = 4;
+                }              
             }
            
         }
         private void Work3()
         {
-            switch (msg.Text)
+            if (msg.Text == "/start")
+            {
+                Start();
+                return;
+            }
+            switch (answerNeuralNetwork.WorkStringAnswer(msg.Text))
             {
                 case "Да":
                     SendMessage("Отлично! Ловите задачу)");
-                    SendMessage(dataDb.Examples.Where(x => x.Property.Id == int.Parse(a)).First().Description);
-                    SendMessage("Напишите ответ:");
+                    SendMessage(dataDb.Examples.Where(x => x.Property.Id == int.Parse(a)).ToList()[solvedExamples].Description);
+                    resultExample = dataDb.Examples.Where(x => x.Property.Id == int.Parse(a)).ToList()[solvedExamples].Answer;
+                    if(resultExample == "чтд" || resultExample == "н")
+                        SendMessage("Это задание не имеет точного ответа. Введите своё решение, а потом сравним с моим!");
+                    else
+                        SendMessage("Напишите ответ:");
                     break;
                 case "Нет":
                     SendMessage("Хорошо, я помог вам всем тем чем мог. Если ещё понадоблюсь, обязательно пишите!");
+                    question = 0;
+                    Start();
                     break;
             }
+            
             question = 4;
         }
         private void Work2()
         {
+            if (msg.Text == "/start")
+            {
+                Start();
+                return;
+            }
             switch (msg.Text)
             {
                 case "Да":
@@ -142,20 +185,13 @@ namespace Server_ProjectMathHelper_v1._0.Classes
         }
         private void Work1()
         {
-            if("Нет" == msg.Text)
-            {
-                SendMessage(" Тогда давай подробно разберём правило...");
-           
-
+ 
+                SendMessage(" Тогда давай подробно разберём правило по которому решается задача...");
+                SendImage(dataDb.Properties.Where(x => x.Id == int.Parse(a)).First().Image);
                 SendMessage(dataDb.Properties.Where(x => x.Id == int.Parse(a)).First().Description);
 
                 SendMessage("Стало ли более понятно?");
-            }
-            if (msg.Text == "/start")
-            {
-                Start();
-                
-            }
+            
             question = 2;
         }
         private void Work0()
@@ -167,7 +203,7 @@ namespace Server_ProjectMathHelper_v1._0.Classes
                     {
                        
                     });
-                   
+                    
                     break;
                 case "/learn":
                     SendMessage("start learning");
@@ -177,12 +213,23 @@ namespace Server_ProjectMathHelper_v1._0.Classes
                     break;
                 default:
                     {
-                        result = neuralNetworkRepository.FindClosestOutput(firstNeuralNetwork.Work(msg.Text), firstNeuralNetwork.Data.TrainingData);
-                         a = (result*10).ToString();
-                        result = neuralNetworkRepository.FindClosestOutput(secondNeuralNetworks[int.Parse(a)].Work(msg.Text), firstNeuralNetwork.Data.TrainingData);
-                        a = (result * 10).ToString();
-                        SendMessage($"Давайте попробуем решить эту задачу вместе!\nКак вы думайте, по каком правилу или теореме решается задача? Если знаете, то напишите название, чтобы я понимал что вы не ошибаетесь)");
-                        question = 1;
+                        try
+                        {
+                            result = neuralNetworkRepository.FindClosestOutput(firstNeuralNetwork.Work(msg.Text), firstNeuralNetwork.Data.TrainingData);
+                            var r1 = (result * 10).ToString();
+                            result = neuralNetworkRepository.FindClosestOutput(secondNeuralNetworks[int.Parse(a) - 1].Work(msg.Text), secondNeuralNetworks[int.Parse(a) - 1].Data.TrainingData);
+                            a = (result * 10).ToString();
+                            if (int.Parse(r1) > 2)
+                                a = 1 + a;
+                            SendMessage($"Давайте попробуем решить эту задачу вместе!\nКак вы думайте, по каком правилу или теореме решается задача? Если знаете, то напишите название, чтобы я понимал что вы не ошибаетесь)");
+                            question = 1;
+                          
+                        }
+                        catch 
+                        {
+
+                            msg.Text = "/start";
+                        }
                         break;
                     }
             }
