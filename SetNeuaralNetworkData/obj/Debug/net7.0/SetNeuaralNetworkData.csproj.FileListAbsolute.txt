@@ -45,3 +45,5 @@ C:\Users\Лёша\YandexDisk\Проект\ProjectShoolHelper_v0.1\SetNeuaralNetw
 C:\Users\Лёша\YandexDisk\Проект\ProjectShoolHelper_v0.1\SetNeuaralNetworkData\obj\Debug\net7.0\refint\SetNeuaralNetworkData.dll
 C:\Users\Лёша\YandexDisk\Проект\ProjectShoolHelper_v0.1\SetNeuaralNetworkData\obj\Debug\net7.0\SetNeuaralNetworkData.pdb
 C:\Users\Лёша\YandexDisk\Проект\ProjectShoolHelper_v0.1\SetNeuaralNetworkData\obj\Debug\net7.0\ref\SetNeuaralNetworkData.dll
+C:\Users\Лёша\YandexDisk\Проект\ProjectShoolHelper_v0.1\SetNeuaralNetworkData\bin\Debug\net7.0\Repository.dll
+C:\Users\Лёша\YandexDisk\Проект\ProjectShoolHelper_v0.1\SetNeuaralNetworkData\bin\Debug\net7.0\Repository.pdb

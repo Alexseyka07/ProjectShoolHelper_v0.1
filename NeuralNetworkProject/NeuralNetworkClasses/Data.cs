@@ -1,4 +1,5 @@
-﻿using System.Text.Json;
+﻿using Repository;
+using System.Text.Json;
 using System.Text.Json.Serialization;
 
 namespace SchoolChatGPT_v1._0.NeuralNetworkClasses
@@ -56,7 +57,33 @@ namespace SchoolChatGPT_v1._0.NeuralNetworkClasses
               return false;
             }
         }
+        public bool GetDataInDataBase(int idRule, DataDb dataDb)
+        {
+            try
+            {
+                
+                json = dataDb.NeuralNetworksData[idRule  - 1].DataJson;
+                var data = JsonSerializer.Deserialize<Data>(json);
+                TrainingData = data.TrainingData;
+                WordsData = data.WordsData;
+                FavoriteWords = data.FavoriteWords;
+                Layers = data.Layers;
+                LearningRate = data.LearningRate;
+                topology = new Topology(data, WordsData.Count, 1, LearningRate, new int[] { 30 });
+                NeuralNetwork = new NeuralNetwork(topology, Layers);
+                return true;
+            }
+            catch
+            {
+                TrainingData = new List<Tuple<double, double[]>>();
+                WordsData = new Dictionary<string, int>();
+                FavoriteWords = new Dictionary<string, double>();
+                Layers = new List<Layer>();
+                LearningRate = 0;
 
+                return false;
+            }
+        }
 
         public bool SetData()
         {

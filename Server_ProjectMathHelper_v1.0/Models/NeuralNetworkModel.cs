@@ -35,7 +35,7 @@ namespace Server_ProjectMathHelper_v1._0.Models
             
 
         }
-        public void SaveData()
+        public virtual void SaveData()
         {
             Data.Layers = NeuralNetwork.Layers;
             DataDb.SetNN(JsonSerializer.Serialize(Data),int.Parse(JsonName.Last().ToString()));

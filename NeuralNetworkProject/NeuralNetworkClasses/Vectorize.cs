@@ -11,10 +11,10 @@ namespace NeuralNetworkProject.NeuralNetworkClasses
     {
         public static double[] VectorizeText(Dictionary<string, int> wordsData, string input)
         {
-            var words = NormalizeText(input);
+            var words = NormalizeText(input).Where(x => x != "").ToList();
 
             var vector = new double[wordsData.Count].Select(x => x = 0).ToArray();
-            for (int j = 0; j < words.Length; j++)
+            for (int j = 0; j < words.Count; j++)
             {
                 if (wordsData.ContainsKey(words[j]))
                 {
@@ -29,7 +29,7 @@ namespace NeuralNetworkProject.NeuralNetworkClasses
         public static double[] VectorizeText(Dictionary<string, int> wordsData, string input, double defoultValue, Dictionary<string, double> fafouritWords)
         {
 
-            var words = NormalizeText(input);
+            var words = NormalizeText(input).Where(x => x != "").ToList();
             // создание пустого вектора, где все элементы равны 0
             var vector = new double[wordsData.Count].Select(x => x = 0).ToArray();
            foreach ( var word in words) 
@@ -49,12 +49,12 @@ namespace NeuralNetworkProject.NeuralNetworkClasses
             return vector; // метод возвращает готовый вектор
         }
 
-        public static string[] NormalizeText(string input)
+        public static List<string> NormalizeText(string input)
         {
             var exampleT = Regex.Replace(input, @"[\p{P}-[.]]", "");
             exampleT = Regex.Replace(exampleT, @"[\d]", "");
             exampleT = Regex.Replace(exampleT, "[A-Za-z]", "");
-            return Regex.Replace(exampleT, @"°", "").Split();
+            return Regex.Replace(exampleT, @"°", "").Split().ToList();
 
         }
     }

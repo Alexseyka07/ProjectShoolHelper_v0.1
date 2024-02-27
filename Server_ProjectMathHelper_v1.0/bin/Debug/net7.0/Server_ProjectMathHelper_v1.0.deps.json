@@ -1061,6 +1061,9 @@
         }
       },
       "NeuralNetworkProject/1.0.0": {
+        "dependencies": {
+          "Repository": "1.0.0"
+        },
         "runtime": {
           "NeuralNetworkProject.dll": {}
         }

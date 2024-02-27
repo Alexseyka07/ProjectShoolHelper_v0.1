@@ -36,3 +36,6 @@ C:\Users\Лёша\YandexDisk\Проект\ProjectShoolHelper_v0.1\NeuralNetworkP
 C:\Users\Лёша\YandexDisk\Проект\ProjectShoolHelper_v0.1\NeuralNetworkProject\obj\Debug\net7.0\refint\NeuralNetworkProject.dll
 C:\Users\Лёша\YandexDisk\Проект\ProjectShoolHelper_v0.1\NeuralNetworkProject\obj\Debug\net7.0\NeuralNetworkProject.pdb
 C:\Users\Лёша\YandexDisk\Проект\ProjectShoolHelper_v0.1\NeuralNetworkProject\obj\Debug\net7.0\ref\NeuralNetworkProject.dll
+C:\Users\Лёша\YandexDisk\Проект\ProjectShoolHelper_v0.1\NeuralNetworkProject\bin\Debug\net7.0\Repository.dll
+C:\Users\Лёша\YandexDisk\Проект\ProjectShoolHelper_v0.1\NeuralNetworkProject\bin\Debug\net7.0\Repository.pdb
+C:\Users\Лёша\YandexDisk\Проект\ProjectShoolHelper_v0.1\NeuralNetworkProject\obj\Debug\net7.0\NeuralNetworkProject.csproj.CopyComplete

@@ -35,7 +35,6 @@ namespace Repository
             context.NeuralNetworksData.ToList()[id - 1].DataJson = data;
 
             context.SaveChanges();
-
         }
     }
 }

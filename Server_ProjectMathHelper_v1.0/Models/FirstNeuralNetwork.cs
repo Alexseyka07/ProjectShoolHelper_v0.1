@@ -21,6 +21,12 @@ namespace Server_ProjectMathHelper_v1._0.Models
             LoadData();
           
         }
+
+        public virtual void SaveData()
+        {
+            Data.Layers = NeuralNetwork.Layers;
+            Data.SetData();
+        }
         private void LoadData()
         {           
             if (!Data.GetData())

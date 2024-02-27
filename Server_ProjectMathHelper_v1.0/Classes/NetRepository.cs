@@ -9,6 +9,8 @@ using Telegram.Bot.Types.ReplyMarkups;
 using SchoolChatGPT_v1._0.NeuralNetworkClasses;
 
 using Repository.Models;
+using Repository;
+using Server_ProjectMathHelper_v1._0.Models;
 
 namespace Server_ProjectMathHelper_v1._0.Classes
 {
@@ -20,19 +22,35 @@ namespace Server_ProjectMathHelper_v1._0.Classes
         private static string resultExample;
         private static int question = 0;
         private static TelegramBotClient client;
-        private static NeuralNetwork neuralNetwork;
+        private static DataDb dataDb = new DataDb();
+        string a = "1";
         private static NeuralNetworkRepository neuralNetworkRepository;
+        private List<SecondNeuralNetwork> secondNeuralNetworks;
+        private FirstNeuralNetwork firstNeuralNetwork;
         private static Data data;
+
+        public NetRepository()
+        {
+            secondNeuralNetworks = new List<SecondNeuralNetwork>();
+            firstNeuralNetwork = new FirstNeuralNetwork("FirstNN");
+            DataDb dataDb = new DataDb();
+            for (int i = 1; i < dataDb.Rules.Where(x => x.Id <= 4).ToList().Count + 1; i++)
+            {
+                secondNeuralNetworks.Add(new SecondNeuralNetwork($"secondNN{i}", i));
+
+            }
+        }
         public void Connect()
         {
             
             neuralNetworkRepository = new NeuralNetworkRepository();
             
-            neuralNetwork = new NeuralNetwork(new Topology(data, inputCount: data.WordsData.Count, outputCount: 1, learningRate: 0.4, layers: new int[] { 30 }));
+            //neuralNetwork = new NeuralNetwork(new Topology(data, inputCount: data.WordsData.Count, outputCount: 1, learningRate: 0.4, layers: new int[] { 30 }));
             
             client = new TelegramBotClient(token);
             client.OnMessage += Client_OnMessage;   
             StartBot();
+            msg.Text = "/start";
         }
 
         private void StartBot()
@@ -100,7 +118,7 @@ namespace Server_ProjectMathHelper_v1._0.Classes
             {
                 case "Да":
                     SendMessage("Отлично! Ловите задачу)");
-                   
+                    SendMessage(dataDb.Examples.Where(x => x.Property.Id == int.Parse(a)).First().Description);
                     SendMessage("Напишите ответ:");
                     break;
                 case "Нет":
@@ -124,11 +142,13 @@ namespace Server_ProjectMathHelper_v1._0.Classes
         }
         private void Work1()
         {
-            if("По теореме Пифагора" == msg.Text)
+            if("Нет" == msg.Text)
             {
-                SendMessage("Отлично! Тогда давай подробно разберём правило...");
-               
-                
+                SendMessage(" Тогда давай подробно разберём правило...");
+           
+
+                SendMessage(dataDb.Properties.Where(x => x.Id == int.Parse(a)).First().Description);
+
                 SendMessage("Стало ли более понятно?");
             }
             if (msg.Text == "/start")
@@ -145,14 +165,7 @@ namespace Server_ProjectMathHelper_v1._0.Classes
                 case "/start":
                     SendMessageAndButtons("Привет! Я могу помочь тебе решить задачу по математике", new List<List<KeyboardButton>>
                     {
-                        new List<KeyboardButton>
-                        {
-                            new KeyboardButton {Text = "/start" }, new KeyboardButton {Text = "/info"}
-                        }  ,
-                        new List<KeyboardButton>
-                        {
-                             new KeyboardButton{Text = "/learn"}
-                        }
+                       
                     });
                    
                     break;
@@ -164,8 +177,10 @@ namespace Server_ProjectMathHelper_v1._0.Classes
                     break;
                 default:
                     {
-                        result = neuralNetworkRepository.FindClosestOutput(neuralNetworkRepository.Work(neuralNetwork, msg.Text), data.TrainingData);
-                        result = 0.1;
+                        result = neuralNetworkRepository.FindClosestOutput(firstNeuralNetwork.Work(msg.Text), firstNeuralNetwork.Data.TrainingData);
+                         a = (result*10).ToString();
+                        result = neuralNetworkRepository.FindClosestOutput(secondNeuralNetworks[int.Parse(a)].Work(msg.Text), firstNeuralNetwork.Data.TrainingData);
+                        a = (result * 10).ToString();
                         SendMessage($"Давайте попробуем решить эту задачу вместе!\nКак вы думайте, по каком правилу или теореме решается задача? Если знаете, то напишите название, чтобы я понимал что вы не ошибаетесь)");
                         question = 1;
                         break;

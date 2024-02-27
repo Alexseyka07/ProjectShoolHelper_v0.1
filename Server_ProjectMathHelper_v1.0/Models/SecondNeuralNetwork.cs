@@ -24,7 +24,7 @@ namespace Server_ProjectMathHelper_v1._0.Models
         }
         private void LoadData()
         {
-            if (!Data.GetData())
+            if (!Data.GetDataInDataBase(RuleId, DataDb))
                 SetData();
             NeuralNetwork = Data.NeuralNetwork;
         }
@@ -58,6 +58,8 @@ namespace Server_ProjectMathHelper_v1._0.Models
             //Создание TrainingData
             foreach (var example in examples)
             {
+                if(example.Property.Id >= 10)
+                    example.Property.Id = example.Property.Id%10;
                 Data.TrainingData.Add(new Tuple<double, double[]>(example.Property.Id / 10.0, Vectorize.VectorizeText(Data.WordsData, example.Description, 0.5, Data.FavoriteWords)));
             }
             Console.WriteLine("введите LearningRate:");
