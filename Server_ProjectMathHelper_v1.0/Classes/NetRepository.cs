@@ -108,15 +108,27 @@ namespace Server_ProjectMathHelper_v1._0.Classes
                 Start();
                 return;
             }
+            if (msg.Text == "чтд" ||  msg.Text == "н")
+            {
+                SendMessage("Вот решение этой задачи:");
+                var example = dataDb.Examples.Where(x => x.Property.Id == int.Parse(a)).ToList()[solvedExamples];
+                SendMessage($"{example.Solution}\n Ответ:{example.Answer}");
+                solvedExamples++;
+                badAnswer = 0;
+                SendMessage("Хочешь ещё задачку?");
+                question = 3;
+                return;
+            }
+
             if (resultExample == msg.Text)
             {
                 SendMessage("Отлично! Это правильный ответ!");
                 solvedExamples++;
                 badAnswer = 0;
-                Thread.Sleep(100);
-               
+        
                 SendMessage("Хочешь ещё задачку?");
                 question = 3;
+                return;
             }          
             else
             {              
@@ -127,13 +139,16 @@ namespace Server_ProjectMathHelper_v1._0.Classes
                     var example = dataDb.Examples.Where(x => x.Property.Id == int.Parse(a)).ToList()[solvedExamples];
                     SendMessage($"{example.Solution}\n Ответ:{example.Answer}");
                     solvedExamples++;
+                    badAnswer = 0;
                     SendMessage("Хочешь ещё задачку?");
                     question = 3;
+                    return;
                 }
                 else
                 {
                     SendMessage("Эхххх... Это не правильный ответ:( Попробуйте ещё!");
                     question = 4;
+                    return;
                 }              
             }
            
@@ -157,7 +172,7 @@ namespace Server_ProjectMathHelper_v1._0.Classes
                         SendMessage("Напишите ответ:");
                     break;
                 case "Нет":
-                    SendMessage("Хорошо, я помог вам всем тем чем мог. Если ещё понадоблюсь, обязательно пишите!");
+                    SendMessage("Хорошо, я помог вам всем чем мог. Если ещё понадоблюсь, обязательно пишите!");
                     question = 0;
                     Start();
                     break;
@@ -240,15 +255,17 @@ namespace Server_ProjectMathHelper_v1._0.Classes
         private async void SendMessage(string sendMessage)
         {
             await client.SendTextMessageAsync(msg.Chat.Id, sendMessage);
+            Thread.Sleep(150);
         }
         private async void SendImage(string sendImageAddress)
         {
             await client.SendPhotoAsync(msg.Chat.Id, sendImageAddress);
+            Thread.Sleep(150);
         }
         private async void SendMessageAndButtons(string sendMessage, List<List<KeyboardButton>> keyboards)
         {
             await client.SendTextMessageAsync(msg.Chat.Id, sendMessage, replyMarkup: GetButtons(keyboards));
-              
+              Thread.Sleep(150);
         }
         private static IReplyMarkup GetButtons(List<List<KeyboardButton>> keyboards)
         {

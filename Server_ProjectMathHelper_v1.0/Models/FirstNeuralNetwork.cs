@@ -22,7 +22,7 @@ namespace Server_ProjectMathHelper_v1._0.Models
           
         }
 
-        public virtual void SaveData()
+        public override void SaveData()
         {
             Data.Layers = NeuralNetwork.Layers;
             Data.SetData();
@@ -62,7 +62,6 @@ namespace Server_ProjectMathHelper_v1._0.Models
             {
                 Data.TrainingData.Add(new Tuple<double, double[]>(example.Property.Rule.Id / 10.0, Vectorize.VectorizeText(Data.WordsData, example.Description, 0.5, Data.FavoriteWords)));
             }
-            Console.WriteLine("введите LearningRate:");
             Data.LearningRate = 0.5;
             Data.NeuralNetwork = new NeuralNetwork(new Topology(Data, Data.WordsData.Count, 1, Data.LearningRate, new int[] { 30 }));
             Data.Layers = Data.NeuralNetwork.Layers;

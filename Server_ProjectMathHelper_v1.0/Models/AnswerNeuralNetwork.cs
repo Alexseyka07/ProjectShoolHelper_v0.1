@@ -18,12 +18,12 @@ namespace Server_ProjectMathHelper_v1._0.Models
         }
         private void LoadData()
         {
-            if (!Data.GetDataInDataBase(1, DataDb))
+            if (!Data.GetData())
                 SetData();
             NeuralNetwork = Data.NeuralNetwork;
         }
 
-        public virtual void SaveData()
+        public override void SaveData()
         {
             Data.Layers = NeuralNetwork.Layers;
             Data.SetData();
