@@ -10,9 +10,12 @@ public static class Program
     private static List<SecondNeuralNetwork> secondNeuralNetworks = new List<SecondNeuralNetwork>();
     private static void Main(string[] args)
     {
-         NetRepository netRepository = new NetRepository();
-         netRepository.Connect();
-      
+        /*NetRepository netRepository = new NetRepository();
+        netRepository.Connect();*/
+
+
+        FirstNeuralNetwork first = new FirstNeuralNetwork("FirstNN");
+        new UIManager().UIWork(first);
     }
     
     private static void LNN2()
