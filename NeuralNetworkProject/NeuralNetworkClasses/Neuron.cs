@@ -1,4 +1,6 @@
-﻿namespace SchoolChatGPT_v1._0.NeuralNetworkClasses
+﻿using System.Text.Json.Serialization;
+
+namespace SchoolChatGPT_v1._0.NeuralNetworkClasses
 {
     public class Neuron
     {
@@ -27,6 +29,8 @@
         /// </summary>
         public double Delta { get; private set; }
 
+        public int InputCount { get; private set; }
+
         /// <summary>
         /// Конструктор класса Neuron.
         /// </summary>
@@ -35,13 +39,27 @@
         public Neuron(int inputCount, NeuronType neuronType = NeuronType.Normal)
         {
             NeuronType = neuronType;
+            InputCount = inputCount;
             Weights = new List<double>();
             Inputs = new List<double>();
 
             // Инициализация весов случайными значениями
-            InitWeightsRandomValues(inputCount);
+            InitWeightsRandomValues(InputCount);
         }
+        [JsonConstructor]
+        public Neuron(List<double> inputs, List<double> weights,int inputCount, double output, double delta, NeuronType neuronType = NeuronType.Normal)
+        {
+            NeuronType = neuronType;
+            InputCount = inputCount;
+            Weights = weights;
+            Inputs = inputs; 
+            Output = output;
+            Delta = delta;
+            if(neuronType == NeuronType.Normal) 
+            { }
 
+            
+        }
         /// <summary>
         /// Инициализация весов случайными значениями.
         /// </summary>

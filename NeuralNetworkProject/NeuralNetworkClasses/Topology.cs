@@ -28,6 +28,9 @@
         public List<Tuple<double, double[]>> TrainingData { get; }
 
         public Dictionary<string, int> WordsData { get; }
+        public Dictionary<string, double> FavoriteWords { get; }
+
+        public string JsonName { get; }
 
         /// <summary>
         /// Инициализирует новый экземпляр класса Topology с указанными параметрами.
@@ -45,6 +48,8 @@
             HiddenLayers.AddRange(layers);
             TrainingData = data.TrainingData;
             WordsData = data.WordsData;
+            FavoriteWords = data.FavoriteWords;
+            JsonName = data.Name;
         }
     }
 }

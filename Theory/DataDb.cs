@@ -14,6 +14,8 @@ namespace Repository
         public List<Rule> Rules { get; set; }
         public List<Property> Properties { get; set; }
         public List<Example> Examples { get; set; }
+        public List<NeuralNetworksData> NeuralNetworksData { get; set; }
+        public List<AnswerNeuralNetworkJson> AnswerNeuralNetworkJson { get; set; }
 
         public DataDb() 
         { 
@@ -23,9 +25,18 @@ namespace Repository
         {
             var context = new RulesContext();
 
-            Rules = context.Rules.ToList();
-            Properties = context.Properties.ToList();
-            Examples = context.Examples.ToList();
-        } 
+            Rules = context.Rules.Where(x => x.Id <= 4).ToList();
+            Properties = context.Properties.Where(x => x.Rule.Id <= 4).ToList();
+            Examples = context.Examples.Where(x => x.Property.Rule.Id <= 4).ToList();
+            NeuralNetworksData = context.NeuralNetworksData.ToList();
+            AnswerNeuralNetworkJson = context.AnswerNeuralNetworkJson.ToList();
+        }
+        public void SetNN(string data, int id)
+        {
+            var context = new RulesContext();
+            context.NeuralNetworksData.ToList()[id - 1].DataJson = data;
+
+            context.SaveChanges();
+        }
     }
 }
