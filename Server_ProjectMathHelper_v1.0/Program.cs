@@ -4,14 +4,14 @@ using SchoolChatGPT_v1._0.NeuralNetworkClasses;
 using Server_ProjectMathHelper_v1._0.Classes;
 using Repository;
 using Server_ProjectMathHelper_v1._0.Models;
+using Server_ProjectMathHelper_v1._0.Controllers;
 
 public static class Program
 {
     private static List<SecondNeuralNetwork> secondNeuralNetworks = new List<SecondNeuralNetwork>();
     private static void Main(string[] args)
     {
-         NetRepository netRepository = new NetRepository();
-         netRepository.Connect();
+        TelegramBotController telegramBotController = new TelegramBotController();
       
     }
     

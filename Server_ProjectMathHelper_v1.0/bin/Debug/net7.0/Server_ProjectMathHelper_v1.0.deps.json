@@ -8,9 +8,8 @@
     ".NETCoreApp,Version=v7.0": {
       "Server_ProjectMathHelper_v1.0/1.0.0": {
         "dependencies": {
-          "NeuralNetworkProject": "1.0.0",
+          "NeuralNetwork": "1.0.0",
           "Repository": "1.0.0",
-          "SetNeuaralNetworkData": "1.0.0",
           "Telegram.Bot": "16.0.2"
         },
         "runtime": {
@@ -1060,12 +1059,12 @@
           }
         }
       },
-      "NeuralNetworkProject/1.0.0": {
+      "NeuralNetwork/1.0.0": {
         "dependencies": {
           "Repository": "1.0.0"
         },
         "runtime": {
-          "NeuralNetworkProject.dll": {}
+          "NeuralNetwork.dll": {}
         }
       },
       "Repository/1.0.0": {
@@ -1074,14 +1073,6 @@
         },
         "runtime": {
           "Repository.dll": {}
-        }
-      },
-      "SetNeuaralNetworkData/1.0.0": {
-        "dependencies": {
-          "NeuralNetworkProject": "1.0.0"
-        },
-        "runtime": {
-          "SetNeuaralNetworkData.dll": {}
         }
       }
     }
@@ -1799,17 +1790,12 @@
       "path": "telegram.bot/16.0.2",
       "hashPath": "telegram.bot.16.0.2.nupkg.sha512"
     },
-    "NeuralNetworkProject/1.0.0": {
+    "NeuralNetwork/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
     "Repository/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "SetNeuaralNetworkData/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

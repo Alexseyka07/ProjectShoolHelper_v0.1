@@ -17,8 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\NeuralNetworkProject\NeuralNetworkProject.csproj" />
-    <ProjectReference Include="..\SetNeuaralNetworkData\SetNeuaralNetworkData.csproj" />
+    <ProjectReference Include="..\NeuralNetworkProject\NeuralNetwork.csproj" />
     <ProjectReference Include="..\Theory\Repository.csproj" />
   </ItemGroup>
 

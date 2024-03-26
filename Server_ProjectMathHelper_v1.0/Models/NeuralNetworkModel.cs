@@ -22,7 +22,7 @@ namespace Server_ProjectMathHelper_v1._0.Models
 
         public string JsonName { get; set; }
 
-        protected DataDb DataDb { get; set; }
+        public DataDb DataDb { get; set; }
 
         public NeuralNetworkModel(string jsonName)
         {
@@ -50,6 +50,35 @@ namespace Server_ProjectMathHelper_v1._0.Models
         public double Learn(int epoch)
         {
             return NeuralNetworkRepository.Learn(NeuralNetwork, epoch);
+        }
+
+        public double FindClosestOutput(double output, List<Tuple<double, double[]>> trainingData)
+        {
+            var outputs = SetOutputs(trainingData);
+            var closestOutput = outputs[0];
+            var minDifference = Math.Abs(outputs[0] - output);
+
+            foreach (var number in outputs)
+            {
+                var difference = Math.Abs(number - output);
+                if (difference < minDifference)
+                {
+                    minDifference = difference;
+                    closestOutput = number;
+                }
+            }
+
+            return closestOutput;
+        }
+        private double[] SetOutputs(List<Tuple<double, double[]>> trainingData)
+        {
+            var result = new List<double>();
+            foreach (var item in trainingData)
+            {
+                if (!result.Contains(item.Item1))
+                    result.Add(item.Item1);
+            }
+            return result.ToArray();
         }
     }
 }

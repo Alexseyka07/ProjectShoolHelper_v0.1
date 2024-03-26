@@ -2,7 +2,7 @@
 using Repository;
 using Repository.Models;
 using SchoolChatGPT_v1._0.NeuralNetworkClasses;
-using SetWordsForNeuralNetwork;
+
 using System.Text.RegularExpressions;
 
 namespace Server_ProjectMathHelper_v1._0.Classes
