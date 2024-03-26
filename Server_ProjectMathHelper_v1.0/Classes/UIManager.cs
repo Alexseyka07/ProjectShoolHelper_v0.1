@@ -109,13 +109,13 @@ namespace Server_ProjectMathHelper_v1._0.Classes
         }
         private double Work(NeuralNetwork neuralNetwork, string input)
         {
-            return neuralNetworkRepository.FindClosestOutput(Working.Work(input, neuralNetwork), neuralNetwork.Topology.TrainingData);
+            return 0.1;
         }
 
         private double Learn(NeuralNetwork neuralNetwork, int epoch)
         {
             Console.WriteLine("Введитме количество эпох обучения");
-            return Learning.StartLearning(neuralNetwork, epoch)[0].Item1;
+            return 0.2;
         }
 
         private int Testing(NeuralNetwork neuralNetwork)
